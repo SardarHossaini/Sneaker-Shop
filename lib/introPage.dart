@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sneaker_shop/const.dart';
+import 'package:sneaker_shop/homePage.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -46,9 +47,7 @@ class IntroPage extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return HomePage();
-                      }));
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     child: Text("Shop Now"),
                     style: ElevatedButton.styleFrom(

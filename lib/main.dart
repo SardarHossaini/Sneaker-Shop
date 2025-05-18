@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/homePage.dart';
 import 'package:sneaker_shop/introPage.dart';
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: IntroPage(),
+      // home: IntroPage(),
+      home: HomePage(),
     );
   }
 }
