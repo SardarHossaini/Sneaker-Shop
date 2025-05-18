@@ -11,48 +11,55 @@ class IntroPage extends StatelessWidget {
       backgroundColor: background,
       body: Container(
         width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              "assets/images/logo.png",
-              height: 250,
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text(
-              "Just Do It",
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              width: 350,
-              child: Text(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/logo.png",
+                height: 250,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Just Do It",
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
                 "Brand new sneaker and custom kicks made with premium quality.",
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-                decoration: BoxDecoration(),
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 30),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Shop Now"),
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black87,
-                      foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 23)),
-                ))
-          ],
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                  decoration: BoxDecoration(),
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return HomePage();
+                      }));
+                    },
+                    child: Text("Shop Now"),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black87,
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(vertical: 23),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                  ))
+            ],
+          ),
         ),
       ),
     );
