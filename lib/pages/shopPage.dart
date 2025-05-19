@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
 import 'package:sneaker_shop/model/shoe.dart';
@@ -71,12 +73,19 @@ class ShopPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return ShoeTile(
                     shoe: Shoe(
-                        name: "sdf",
-                        price: "test",
-                        imagepath: "assets/images/test1.png",
+                        name: "Nike Air",
+                        price: "240",
+                        imagepath: "assets/images/test3.png",
                         description: "description"),
                   );
-                }))
+                })),
+
+        const Padding(
+          padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
+          child: Divider(
+            color: Colors.white,
+          ),
+        )
       ],
     );
   }

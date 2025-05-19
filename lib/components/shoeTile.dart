@@ -9,7 +9,7 @@ class ShoeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280,
+      width: 350,
       margin: EdgeInsets.only(left: 25),
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
@@ -21,7 +21,6 @@ class ShoeTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
               shoe.imagepath,
-              fit: BoxFit.cover,
             ),
           ),
           // description
@@ -30,24 +29,39 @@ class ShoeTile extends StatelessWidget {
             style: TextStyle(color: Colors.grey[600]),
           ),
           // price + details
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [Text(shoe.name), Text(shoe.price)],
-              ),
-              Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          bottomRight: Radius.circular(12))),
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ))
-            ],
+          Padding(
+            padding: const EdgeInsets.only(left: 18),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      shoe.name,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Text(
+                      "\$" + shoe.price,
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+                Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: const BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(12),
+                            bottomRight: Radius.circular(12))),
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ))
+              ],
+            ),
           )
         ],
       ),
