@@ -1,15 +1,35 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
 import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 
-class ShopPage extends StatelessWidget {
-  const ShopPage({super.key});
+class ShoePage extends StatefulWidget {
+  const ShoePage({super.key});
 
   @override
+  State<ShoePage> createState() => _ShoePageState();
+}
+
+class _ShoePageState extends State<ShoePage> {
+  void addShoeToCart(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
+
+    // show dialog
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              title: Text(
+                "successfuly added",
+                style: TextStyle(fontSize: 18),
+              ),
+              content: Text("Check you cart"),
+            ));
+  }
+
   Widget build(BuildContext context) {
     return Consumer<Cart>(
       builder: (context, value, child) => Column(
@@ -77,7 +97,7 @@ class ShopPage extends StatelessWidget {
                     Shoe eachShoe = value.getShoeList()[index];
                     return ShoeTile(
                       shoe: eachShoe,
-                      onTab: () {},
+                      onTab: () => addShoeToCart(eachShoe),
                     );
                   })),
 
