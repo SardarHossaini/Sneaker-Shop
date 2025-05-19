@@ -42,29 +42,74 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              icon: Icon(Icons.menu_rounded)),
+              icon: Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Icon(Icons.menu_rounded),
+              )),
         ),
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
       drawer: Drawer(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         backgroundColor: Colors.grey[900],
         child: Column(
           children: [
-            /// A drawer header displaying the application logo
-            ///
-            /// Uses an image asset with a white color filter, positioned within a drawer
-            /// Optionally can have a border decoration and is typically used at the top of a drawer
-            DrawerHeader(
-                // decoration: BoxDecoration(
-                //     border: Border.all(
-                //   width: 5.0,
-                // )),
-                // margin: EdgeInsets.only(bottom: 20),
-                child: Image.asset(
-              'assets/images/logo.png',
-              color: Colors.white,
-            )),
+            // code a DrawerHeader that have a logo and Line in bottom
+            Column(
+              children: [
+                Image.asset(
+                  'assets/images/logo.png',
+                  height: 150,
+                  color: Colors.white,
+                ),
+                SizedBox(height: 20),
+                Divider(
+                  color: Colors.grey[800],
+                  thickness: 1,
+                ),
+              ],
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 25, top: 15),
+              child: ListTile(
+                leading: Icon(Icons.home, color: Colors.white),
+                title: Text(
+                  'Home',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 25, top: 15),
+              child: ListTile(
+                leading: Icon(Icons.info, color: Colors.white),
+                title: Text(
+                  'About',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 25, top: 15),
+              child: ListTile(
+                leading: Icon(Icons.logout_outlined, color: Colors.white),
+                title: Text(
+                  'Logout',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
           ],
         ),
       ),

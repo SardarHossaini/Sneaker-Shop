@@ -24,11 +24,11 @@ class MyBottomNavBar extends StatelessWidget {
           ),
           GButton(
             icon: Icons.shopping_bag_rounded,
-            text: "Shop",
+            text: "Cart",
           ),
           GButton(
-            icon: Icons.info,
-            text: "About",
+            icon: Icons.favorite,
+            text: "Favorites",
           ),
           GButton(
             icon: Icons.person,
