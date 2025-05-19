@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
+import 'package:sneaker_shop/components/cartItem.dart';
 import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 
@@ -26,10 +27,12 @@ class CartPage extends StatelessWidget {
                   ),
                   Expanded(
                       child: ListView.builder(
-                          itemCount: 10,
+                          itemCount: value.userCart.length,
                           itemBuilder: (context, index) {
                             Shoe eachShoe = value.getUserCart()[index];
-                            return CartItem();
+                            return CartItem(
+                              shoe: eachShoe,
+                            );
                           }))
                 ],
               ),
