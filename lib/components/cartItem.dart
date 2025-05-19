@@ -31,7 +31,6 @@ class _CartItemState extends State<CartItem> {
           onPressed: removeItem,
           icon: Icon(
             Icons.delete,
-            color: Colors.red,
           ),
         ),
       ),

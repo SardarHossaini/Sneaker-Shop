@@ -75,7 +75,7 @@ class _ShoePageState extends State<ShoePage> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  "Hot Picks 🔥🔥",
+                  "Hot Picks 🔥",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 Text(
