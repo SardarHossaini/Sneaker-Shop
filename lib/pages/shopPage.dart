@@ -66,13 +66,14 @@ class ShopPage extends StatelessWidget {
         ),
         Expanded(
             child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return ShoeTile(
                     shoe: Shoe(
                         name: "sdf",
                         price: "test",
-                        imagepath: "assets/images/test1",
+                        imagepath: "assets/images/test1.png",
                         description: "description"),
                   );
                 }))
