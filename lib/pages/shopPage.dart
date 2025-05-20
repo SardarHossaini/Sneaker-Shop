@@ -95,24 +95,25 @@ class _ShoePageState extends State<ShoePage> {
           ),
 
           Expanded(
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    Shoe eachShoe = value.getShoeList()[index];
-                    return ShoeTile(
-                      shoe: eachShoe,
-                      onTab: () => addShoeToCart(eachShoe),
-                      onTab2: () => addShoeToFavorite(eachShoe),
-                    );
-                  })),
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  Shoe eachShoe = value.getShoeList()[index];
+                  return ShoeTile(
+                    shoe: eachShoe,
+                    onTab: () => addShoeToCart(eachShoe),
+                    onTab2: () => addShoeToFavorite(eachShoe),
+                  );
+                }),
+          ),
 
           const Padding(
             padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
             child: Divider(
               color: Colors.white,
             ),
-          )
+          ),
         ],
       ),
     );

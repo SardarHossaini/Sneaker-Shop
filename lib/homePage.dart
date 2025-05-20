@@ -4,6 +4,7 @@ import 'package:sneaker_shop/pages/favoritePage.dart';
 import 'const.dart';
 
 import 'pages/aboutPage.dart';
+import 'pages/discount.dart';
 import 'pages/profilePage.dart';
 import 'pages/shopPage.dart';
 import 'pages/cartPage.dart';
@@ -114,7 +115,21 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: pages[_selectedIndex],
+      body: ListView(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height - 140,
+            child: pages[_selectedIndex],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          // code a bottom navigation bar with 4 items
+          Container(
+            child: Discount(),
+          )
+        ],
+      ),
     );
   }
 }
