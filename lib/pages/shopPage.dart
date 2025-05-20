@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
 import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/model/shoe.dart';
+import 'package:sneaker_shop/pages/discount.dart';
 
 class ShoePage extends StatefulWidget {
   const ShoePage({super.key});
@@ -49,7 +50,7 @@ class _ShoePageState extends State<ShoePage> {
 
   Widget build(BuildContext context) {
     return Consumer<Cart>(
-      builder: (context, value, child) => Column(
+      builder: (context, value, child) => ListView(
         children: [
           // Seach bar
           Padding(
@@ -70,6 +71,7 @@ class _ShoePageState extends State<ShoePage> {
             child: Text(
               "everyone files.. some fly longer than others",
               style: TextStyle(color: Colors.grey[600]),
+              textAlign: TextAlign.center,
             ),
           ),
           const Padding(
@@ -93,19 +95,22 @@ class _ShoePageState extends State<ShoePage> {
           SizedBox(
             height: 10,
           ),
-
-          Expanded(
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  Shoe eachShoe = value.getShoeList()[index];
-                  return ShoeTile(
-                    shoe: eachShoe,
-                    onTab: () => addShoeToCart(eachShoe),
-                    onTab2: () => addShoeToFavorite(eachShoe),
-                  );
-                }),
+          // code a horizontal listview with 5 items
+          Container(
+            height: MediaQuery.of(context).size.height - 360,
+            child: Expanded(
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    Shoe eachShoe = value.getShoeList()[index];
+                    return ShoeTile(
+                      shoe: eachShoe,
+                      onTab: () => addShoeToCart(eachShoe),
+                      onTab2: () => addShoeToFavorite(eachShoe),
+                    );
+                  }),
+            ),
           ),
 
           const Padding(
@@ -114,6 +119,14 @@ class _ShoePageState extends State<ShoePage> {
               color: Colors.white,
             ),
           ),
+          SizedBox(
+            height: 10,
+          ),
+          // code a bottom navigation bar with 4 items
+          Container(
+            height: MediaQuery.of(context).size.height - 50,
+            child: Discount(),
+          )
         ],
       ),
     );

@@ -115,22 +115,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: ListView(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height - 140,
-            child: pages[_selectedIndex],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          // code a bottom navigation bar with 4 items
-          Container(
-            height: MediaQuery.of(context).size.height - 100,
-            child: Discount(),
-          )
-        ],
-      ),
+      body: pages[_selectedIndex],
     );
   }
 }

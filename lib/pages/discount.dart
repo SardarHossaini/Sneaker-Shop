@@ -1,10 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sneaker_shop/model/cart.dart';
-import 'package:sneaker_shop/model/shoe.dart';
 
-class Discount extends StatelessWidget {
+import '../components/discountTile.dart';
+import '../model/cart.dart';
+import '../model/shoe.dart';
+
+class Discount extends StatefulWidget {
   const Discount({super.key});
+
+  @override
+  State<Discount> createState() => _DiscountState();
+}
+
+class _DiscountState extends State<Discount> {
+  void addShoeToCart(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
+    // show dialog
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              title: const Text(
+                "successfuly added",
+                style: TextStyle(fontSize: 18),
+              ),
+              content: Text("Check you cart"),
+            ));
+  }
+
+  void addShoeToFavorite(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToFavorite(shoe);
+    // show dialog
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              title: const Text(
+                "successfuly added",
+                style: TextStyle(fontSize: 18),
+              ),
+              content: Text("Check you favorite"),
+            ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +84,7 @@ class Discount extends StatelessWidget {
                           shoe: eachShoe,
                           onTab: () => addShoeToCart(eachShoe),
                           onTab2: () => addShoeToFavorite(eachShoe),
-                        // );
+                        );
                       }),
                 ),
               ],
