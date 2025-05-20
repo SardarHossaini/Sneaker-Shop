@@ -21,13 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) => IntroPage(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            const begin = Offset(1.0, 0.0); // Slide from right
-            const end = Offset.zero;
-            final tween = Tween(begin: begin, end: end);
-            final offsetAnimation = animation.drive(tween);
-
-            return SlideTransition(
-              position: offsetAnimation,
+            return FadeTransition(
+              opacity: animation,
               child: child,
             );
           },
@@ -45,8 +40,8 @@ class _SplashScreenState extends State<SplashScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.white,
-              Colors.yellow.shade300,
+              Colors.yellow,
+              Colors.black,
             ], // Change to your preferred colors
             stops: [0.0, 1.0],
             begin: Alignment.topLeft,
@@ -59,13 +54,13 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Image.asset(
                 'assets/images/logo.png',
-                width: 200,
                 height: 200,
               ),
               SizedBox(height: 20),
               Text(
-                'Welcome to Sneaker Shop',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                "Welcome to Boot Shop",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey[700], fontSize: 16),
               ),
             ],
           ),

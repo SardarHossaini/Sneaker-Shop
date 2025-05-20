@@ -9,8 +9,18 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: background,
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.white,
+              Colors.yellow.shade300,
+            ], // Change to your preferred colors
+            // stops: [0.0, 0.0],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -20,14 +30,7 @@ class IntroPage extends StatelessWidget {
             children: [
               Image.asset(
                 "assets/images/logo.png",
-                height: 250,
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                "Just Do It",
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                height: 200,
               ),
               SizedBox(
                 height: 20,
