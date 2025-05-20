@@ -62,7 +62,7 @@ class ShoeTile extends StatelessWidget {
                           child: Container(
                               padding: const EdgeInsets.only(right: 5),
                               child: const Icon(
-                                Icons.add,
+                                Icons.shopping_bag,
                                 color: Colors.blue,
                                 size: 26,
                               )),

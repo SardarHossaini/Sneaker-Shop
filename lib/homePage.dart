@@ -126,6 +126,7 @@ class _HomePageState extends State<HomePage> {
           ),
           // code a bottom navigation bar with 4 items
           Container(
+            height: MediaQuery.of(context).size.height - 100,
             child: Discount(),
           )
         ],
