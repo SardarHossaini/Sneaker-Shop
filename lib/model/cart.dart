@@ -44,6 +44,8 @@ class Cart extends ChangeNotifier {
   // user Cart shoes
   List<Shoe> userCart = [];
 
+  // Favorite Shoes
+  List<Shoe> favoriteShoes = [];
   // get Shoe List
   List<Shoe> getShoeList() {
     return shoeShop;
@@ -52,6 +54,11 @@ class Cart extends ChangeNotifier {
   // get user cart
   List<Shoe> getUserCart() {
     return userCart;
+  }
+
+  // get favorite shoes
+  List<Shoe> getFavoriteShoes() {
+    return favoriteShoes;
   }
 
   // add item to user cart
@@ -63,6 +70,18 @@ class Cart extends ChangeNotifier {
   // delete item from user Cart
   void deleteItemFromUserCart(Shoe shoe) {
     userCart.remove(shoe);
+    notifyListeners();
+  }
+
+  // add item to favorite
+  void addItemToFavorite(Shoe shoe) {
+    favoriteShoes.add(shoe);
+    notifyListeners();
+  }
+
+  // delete item from favorite
+  void deleteItemFromFavorite(Shoe shoe) {
+    favoriteShoes.remove(shoe);
     notifyListeners();
   }
 }

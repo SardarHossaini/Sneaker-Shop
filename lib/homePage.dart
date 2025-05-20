@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/components/myBottomNavBar.dart';
+import 'package:sneaker_shop/pages/favoritePage.dart';
 import 'const.dart';
 
 import 'pages/aboutPage.dart';
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> pages = [
     ShoePage(),
     CartPage(),
-    AboutPage(),
+    FavoritePage(),
     ProfilePage(),
   ];
 

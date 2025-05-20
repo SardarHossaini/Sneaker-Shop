@@ -3,18 +3,18 @@ import 'package:provider/provider.dart';
 import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 
-class CartItem extends StatefulWidget {
+class FavoriteTile extends StatefulWidget {
   final Shoe shoe;
-  CartItem({super.key, required this.shoe});
+  const FavoriteTile({super.key, required this.shoe});
 
   @override
-  State<CartItem> createState() => _CartItemState();
+  State<FavoriteTile> createState() => _FavoriteTileState();
 }
 
-class _CartItemState extends State<CartItem> {
+class _FavoriteTileState extends State<FavoriteTile> {
   void removeItem() {
     Provider.of<Cart>(context, listen: false)
-        .deleteItemFromUserCart(widget.shoe);
+        .deleteItemFromFavorite(widget.shoe);
   }
 
   @override
@@ -22,7 +22,7 @@ class _CartItemState extends State<CartItem> {
     return Container(
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: ListTile(
         leading: ClipRRect(
             borderRadius: BorderRadius.circular(8),
@@ -33,7 +33,7 @@ class _CartItemState extends State<CartItem> {
         subtitle: Text(widget.shoe.price),
         trailing: IconButton(
           onPressed: removeItem,
-          icon: Icon(
+          icon: const Icon(
             Icons.delete,
           ),
         ),

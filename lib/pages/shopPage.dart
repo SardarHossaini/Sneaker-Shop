@@ -22,11 +22,28 @@ class _ShoePageState extends State<ShoePage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              title: Text(
+              title: const Text(
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
               content: Text("Check you cart"),
+            ));
+  }
+
+  void addShoeToFavorite(Shoe shoe) {
+    Provider.of<Cart>(context, listen: false).addItemToFavorite(shoe);
+
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              title: const Text(
+                "successfuly added",
+                style: TextStyle(fontSize: 18),
+              ),
+              content: Text("Check you favorite"),
             ));
   }
 
@@ -89,6 +106,7 @@ class _ShoePageState extends State<ShoePage> {
           SizedBox(
             height: 10,
           ),
+
           Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -98,6 +116,7 @@ class _ShoePageState extends State<ShoePage> {
                     return ShoeTile(
                       shoe: eachShoe,
                       onTab: () => addShoeToCart(eachShoe),
+                      onTab2: () => addShoeToFavorite(eachShoe),
                     );
                   })),
 

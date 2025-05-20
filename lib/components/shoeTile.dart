@@ -6,7 +6,12 @@ import 'package:sneaker_shop/model/shoe.dart';
 class ShoeTile extends StatelessWidget {
   final Shoe shoe;
   final Function()? onTab;
-  ShoeTile({super.key, required this.shoe, required this.onTab});
+  final Function()? onTab2;
+  ShoeTile(
+      {super.key,
+      required this.shoe,
+      required this.onTab,
+      required this.onTab2});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +21,58 @@ class ShoeTile extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           // image
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
               shoe.imagepath,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 18, right: 18),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      shoe.name,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Text(
+                      "\$" + shoe.price,
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: onTab,
+                      child: Container(
+                          padding: const EdgeInsets.only(right: 5),
+                          child: const Icon(
+                            Icons.add,
+                            color: Colors.blue,
+                          )),
+                    ),
+                    GestureDetector(
+                      onTap: onTab2,
+                      child: Container(
+                          padding: const EdgeInsets.only(left: 5),
+                          child: const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          )),
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
           // description
@@ -34,43 +84,6 @@ class ShoeTile extends StatelessWidget {
             ),
           ),
           // price + details
-          Padding(
-            padding: const EdgeInsets.only(left: 18),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      shoe.name,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                    Text(
-                      "\$" + shoe.price,
-                      style: TextStyle(color: Colors.grey),
-                    )
-                  ],
-                ),
-                GestureDetector(
-                  onTap: onTab,
-                  child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: const BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(12),
-                              bottomRight: Radius.circular(12))),
-                      child: const Icon(
-                        Icons.add,
-                        color: Colors.white,
-                      )),
-                )
-              ],
-            ),
-          )
         ],
       ),
     );
