@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 
-class DiscountTile extends StatefulWidget {
+class DiscountTile extends StatelessWidget {
   final Shoe shoe;
   final Function()? onTab;
   final Function()? onTab2;
@@ -11,11 +11,6 @@ class DiscountTile extends StatefulWidget {
       required this.onTab,
       required this.onTab2});
 
-  @override
-  State<DiscountTile> createState() => _DiscountTileState();
-}
-
-class _DiscountTileState extends State<DiscountTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,30 +25,68 @@ class _DiscountTileState extends State<DiscountTile> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Image
-          Container(
-            height: 150,
-            width: 150,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(widget.shoe.imagepath),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          // Text
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
             children: [
-              Text(
-                widget.shoe.name,
-                style: const TextStyle(color: Colors.white, fontSize: 18),
+              Container(
+                height: 150,
+                width: 150,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(shoe.imagepath),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
-              const SizedBox(height: 5),
-              Text(
-                "\$${widget.shoe.price}",
-                style: const TextStyle(color: Colors.white, fontSize: 18),
+              const SizedBox(
+                width: 30,
+              ),
+              // Text
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    shoe.name,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "\$" + shoe.price,
+                        style: TextStyle(
+                            color: Colors.grey[400],
+                            decoration: TextDecoration.lineThrough),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "\$" + shoe.discountPrice,
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Text(
+                        shoe.discount,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),
@@ -62,9 +95,19 @@ class _DiscountTileState extends State<DiscountTile> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                  onPressed: widget.onTab2,
-                  icon: const Icon(Icons.favorite_border_outlined)),
-              IconButton(onPressed: widget.onTab, icon: const Icon(Icons.add)),
+                  onPressed: onTab2,
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 26,
+                  )),
+              IconButton(
+                  onPressed: onTab,
+                  icon: const Icon(
+                    Icons.shopping_bag,
+                    color: Colors.blue,
+                    size: 26,
+                  )),
             ],
           )
         ],
