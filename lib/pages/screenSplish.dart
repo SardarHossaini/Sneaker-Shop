@@ -14,12 +14,28 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     // Wait for 3 seconds, then navigate
+    // ...existing code...
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => IntroPage()),
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => IntroPage(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            const begin = Offset(1.0, 0.0); // Slide from right
+            const end = Offset.zero;
+            final tween = Tween(begin: begin, end: end);
+            final offsetAnimation = animation.drive(tween);
+
+            return SlideTransition(
+              position: offsetAnimation,
+              child: child,
+            );
+          },
+          transitionDuration: Duration(milliseconds: 500),
+        ),
       );
     });
+// ...existing code...
   }
 
   @override
