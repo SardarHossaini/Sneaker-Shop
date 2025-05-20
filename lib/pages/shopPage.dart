@@ -53,19 +53,6 @@ class _ShoePageState extends State<ShoePage> {
         children: [
           // Seach bar
           Padding(
-            // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            // child: TextField(
-            //   decoration: InputDecoration(
-            //     filled: true,
-            //     fillColor: Colors.grey[200],
-            //     hintText: 'Search',
-            //     suffixIcon: Icon(Icons.search),
-            //     border: OutlineInputBorder(
-            //       borderRadius: BorderRadius.circular(30),
-            //       borderSide: BorderSide.none,
-            //     ),
-            //   ),
-            // ),
             padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
             child: SearchBar(
               elevation: MaterialStatePropertyAll(1),
@@ -110,7 +97,7 @@ class _ShoePageState extends State<ShoePage> {
           Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: value.shoeShop.length,
+                  itemCount: 5,
                   itemBuilder: (context, index) {
                     Shoe eachShoe = value.getShoeList()[index];
                     return ShoeTile(
