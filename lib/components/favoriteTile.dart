@@ -30,7 +30,21 @@ class _FavoriteTileState extends State<FavoriteTile> {
               widget.shoe.imagepath,
             )),
         title: Text(widget.shoe.name),
-        subtitle: Text(widget.shoe.price),
+        subtitle: widget.shoe.discount != "0%"
+            ? Text(
+                "\$" + widget.shoe.discountPrice,
+                style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold),
+              )
+            : Text(
+                "\$" + widget.shoe.price,
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
         trailing: IconButton(
           onPressed: removeItem,
           icon: const Icon(
