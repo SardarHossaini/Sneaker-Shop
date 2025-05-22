@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
 import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 import 'package:sneaker_shop/pages/discount.dart';
+import "package:flutter_carousel_slider/carousel_slider.dart";
 
 class ShoePage extends StatefulWidget {
   const ShoePage({super.key});
@@ -52,27 +56,57 @@ class _ShoePageState extends State<ShoePage> {
     return Consumer<Cart>(
       builder: (context, value, child) => ListView(
         children: [
-          // Seach bar
+          // Slider
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
-            child: SearchBar(
-              elevation: MaterialStatePropertyAll(1),
-              hintText: 'Search',
-              trailing: const [Icon(Icons.search)],
-              padding: const MaterialStatePropertyAll(
-                  EdgeInsets.only(left: 10, right: 15)),
-              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 25,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+              ),
+              width: double.infinity,
+              height: 200,
+              child: CarouselSlider(
+                  enableAutoSlider: true, // این خط را اضافه کنید
+                  autoSliderDelay: Duration(seconds: 3),
+                  autoSliderTransitionTime: Duration(seconds: 1),
+                  unlimitedMode: true,
+                  slideIndicator: CircularSlideIndicator(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    itemSpacing: 10,
+                    indicatorRadius: 4,
+                    indicatorBorderWidth: 1.5,
+                    currentIndicatorColor: Colors.black,
+                  ),
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/test1.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/test4.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        'assets/images/test5.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ]),
             ),
           ),
-          // message
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25),
-            child: Text(
-              "everyone files.. some fly longer than others",
-              style: TextStyle(color: Colors.grey[600]),
-              textAlign: TextAlign.center,
-            ),
+          const SizedBox(
+            height: 20,
           ),
           const Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
