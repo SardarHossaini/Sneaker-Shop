@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
+
 
 import 'package:sneaker_shop/introPage.dart';
+import 'package:sneaker_shop/pages/outBorading.dart';
+
+
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -19,7 +22,8 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          pageBuilder: (context, animation, secondaryAnimation) => IntroPage(),
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              OutBoarding(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,

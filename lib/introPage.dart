@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sneaker_shop/const.dart';
+// import 'package:sneaker_shop/const.dart';
 import 'package:sneaker_shop/homePage.dart';
 
 class IntroPage extends StatelessWidget {
