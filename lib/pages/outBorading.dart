@@ -18,8 +18,9 @@ class _OutBoardingState extends State<OutBoarding> {
       // slideTransform: StackTransform(),
       slideIndicator: CircularSlideIndicator(
         padding: EdgeInsets.only(bottom: 20),
-        itemSpacing: 15,
-
+        itemSpacing: 10,
+        indicatorRadius: 4,
+        // indicatorBorderWidth: 1.5,
         // indicatorBackgroundColor: Colors.yellow,
         currentIndicatorColor: Colors.black,
       ),

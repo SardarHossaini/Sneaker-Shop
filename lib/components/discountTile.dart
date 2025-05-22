@@ -76,7 +76,7 @@ class DiscountTile extends StatelessWidget {
                     width: 100,
                     height: 30,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.black,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(
@@ -98,14 +98,14 @@ class DiscountTile extends StatelessWidget {
                   onPressed: onTab2,
                   icon: const Icon(
                     Icons.favorite,
-                    color: Colors.red,
+                    color: Colors.black,
                     size: 26,
                   )),
               IconButton(
                   onPressed: onTab,
                   icon: const Icon(
                     Icons.shopping_bag,
-                    color: Colors.blue,
+                    color: Colors.black,
                     size: 26,
                   )),
             ],

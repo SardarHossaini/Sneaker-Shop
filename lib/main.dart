@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Poppins'),
-        // home: SplashScreen(),
-        home: HomePage(),
+        home: SplashScreen(),
+        // home: HomePage(),
       ),
     );
   }
