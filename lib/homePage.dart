@@ -39,6 +39,24 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index) => navigateBottomNavBar(index),
       ),
       appBar: AppBar(
+        title: Text(
+          "Bootique",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.search),
+            ),
+          ),
+        ],
         leading: Builder(
           builder: (context) => IconButton(
               onPressed: () {
@@ -58,19 +76,22 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             // code a DrawerHeader that have a logo and Line in bottom
-            Column(
-              children: [
-                Image.asset(
-                  'assets/images/logo.png',
-                  height: 150,
-                  color: Colors.white,
-                ),
-                SizedBox(height: 20),
-                Divider(
-                  color: Colors.grey[800],
-                  thickness: 1,
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(top: 15, bottom: 15),
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/logo.png',
+                    height: 100,
+                    color: Colors.white,
+                  ),
+                  SizedBox(height: 20),
+                  Divider(
+                    color: Colors.grey[800],
+                    thickness: 1,
+                  ),
+                ],
+              ),
             ),
 
             Padding(
