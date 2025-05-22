@@ -91,6 +91,7 @@ class _OutBoardingState extends State<OutBoarding> {
               Image.asset(
                 'assets/images/screen2.jpg',
                 height: 280,
+                fit: BoxFit.cover,
               ),
               SizedBox(height: 20),
               Text(

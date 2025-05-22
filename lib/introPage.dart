@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 // import 'package:sneaker_shop/const.dart';
 import 'package:sneaker_shop/homePage.dart';
+import 'package:sneaker_shop/pages/login.dart';
+import 'package:sneaker_shop/pages/signUp.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -50,7 +52,7 @@ class IntroPage extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                          MaterialPageRoute(builder: (context) => Login()));
                     },
                     child: Text("Login"),
                     style: ElevatedButton.styleFrom(
@@ -70,7 +72,7 @@ class IntroPage extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                          MaterialPageRoute(builder: (context) => SignUp()));
                     },
                     child: Text("Sign Up"),
                     style: ElevatedButton.styleFrom(

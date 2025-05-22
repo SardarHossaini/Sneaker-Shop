@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 // import 'package:sneaker_shop/homePage.dart';
 // import 'package:sneaker_shop/introPage.dart';
 import 'package:sneaker_shop/model/cart.dart';
+import 'package:sneaker_shop/pages/login.dart';
 
 import 'pages/screenSplish.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Poppins'),
         home: SplashScreen(),
-        // home: HomePage(),
+        // home: Login(),
       ),
     );
   }
