@@ -17,6 +17,7 @@ class ShoePage extends StatefulWidget {
 }
 
 class _ShoePageState extends State<ShoePage> {
+  List<String> catagories = ["All", "Men", "Women", "Kids"];
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
 
@@ -103,6 +104,50 @@ class _ShoePageState extends State<ShoePage> {
                       ),
                     ),
                   ]),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          // Catagory
+          Padding(
+            padding: const EdgeInsets.only(left: 25),
+            child: Text(
+              "Catagories",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            height: 40,
+            child: Expanded(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                // shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                      width: 80,
+                      height: 50,
+                      child: Center(
+                        child: Text(
+                          catagories[index],
+                          style: const TextStyle(
+                              fontSize: 18, color: Colors.black),
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
           ),
           const SizedBox(

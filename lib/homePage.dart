@@ -50,10 +50,17 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         actions: [
           Padding(
+            padding: const EdgeInsets.only(right: 0),
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notifications),
+            ),
+          ),
+          Padding(
             padding: const EdgeInsets.only(right: 15),
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.person),
             ),
           ),
         ],
