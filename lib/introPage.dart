@@ -41,7 +41,7 @@ class IntroPage extends StatelessWidget {
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
               SizedBox(
-                height: 40,
+                height: 100,
               ),
               Container(
                   decoration: BoxDecoration(),
@@ -52,14 +52,39 @@ class IntroPage extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => HomePage()));
                     },
-                    child: Text("Shop Now"),
+                    child: Text("Login"),
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black87,
                         foregroundColor: Colors.white,
                         padding: EdgeInsets.symmetric(vertical: 23),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12))),
-                  ))
+                  )),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                  decoration: BoxDecoration(),
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    },
+                    child: Text("Sign Up"),
+                    style: ElevatedButton.styleFrom(
+                        // backgroundColor: Colors.black87,
+                        side: BorderSide(
+                          color: Colors.black87,
+                          width: 1,
+                        ),
+                        elevation: 0,
+                        foregroundColor: Colors.black,
+                        padding: EdgeInsets.symmetric(vertical: 23),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12))),
+                  )),
             ],
           ),
         ),
