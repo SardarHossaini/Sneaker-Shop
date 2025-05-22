@@ -113,7 +113,7 @@ class Login extends StatelessWidget {
               child: Center(
                 child: IconButton(
                   onPressed: () {},
-                  icon: Image.asset("assets/images/facebook.png"),
+                  icon: Image.asset("assets/images/apple.png"),
                 ),
               ),
             ),
@@ -127,7 +127,7 @@ class Login extends StatelessWidget {
               child: Center(
                 child: IconButton(
                   onPressed: () {},
-                  icon: Image.asset("assets/images/apple.png"),
+                  icon: Image.asset("assets/images/facebook.png"),
                 ),
               ),
             ),

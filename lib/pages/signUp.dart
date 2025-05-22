@@ -143,7 +143,7 @@ class _SignUpState extends State<SignUp> {
                   child: Center(
                     child: IconButton(
                       onPressed: () {},
-                      icon: Image.asset("assets/images/facebook.png"),
+                      icon: Image.asset("assets/images/apple.png"),
                     ),
                   ),
                 ),
@@ -157,7 +157,7 @@ class _SignUpState extends State<SignUp> {
                   child: Center(
                     child: IconButton(
                       onPressed: () {},
-                      icon: Image.asset("assets/images/apple.png"),
+                      icon: Image.asset("assets/images/facebook.png"),
                     ),
                   ),
                 ),
