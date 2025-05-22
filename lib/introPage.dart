@@ -10,17 +10,17 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.white,
-              Colors.yellow.shade300,
-            ], // Change to your preferred colors
-            // stops: [0.0, 0.0],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(
+        //     colors: [
+        //       Colors.white,
+        //       Colors.yellow.shade300,
+        //     ], // Change to your preferred colors
+        //     // stops: [0.0, 0.0],
+        //     begin: Alignment.topLeft,
+        //     end: Alignment.bottomRight,
+        //   ),
+        // ),
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25),
