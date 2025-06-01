@@ -58,91 +58,80 @@ class _ShoePageState extends State<ShoePage> {
       builder: (context, value, child) => ListView(
         children: [
           // Slider
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 25,
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              width: double.infinity,
-              height: 200,
-              child: CarouselSlider(
-                  enableAutoSlider: true, // این خط را اضافه کنید
-                  autoSliderDelay: Duration(seconds: 3),
-                  autoSliderTransitionTime: Duration(seconds: 1),
-                  unlimitedMode: true,
-                  slideIndicator: CircularSlideIndicator(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    itemSpacing: 10,
-                    indicatorRadius: 4,
-                    indicatorBorderWidth: 1.5,
-                    currentIndicatorColor: Colors.black,
+            width: double.infinity,
+            height: 200,
+            child: CarouselSlider(
+                enableAutoSlider: true, // این خط را اضافه کنید
+                autoSliderDelay: Duration(seconds: 3),
+                autoSliderTransitionTime: Duration(seconds: 1),
+                unlimitedMode: true,
+                slideIndicator: CircularSlideIndicator(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  itemSpacing: 8,
+                  indicatorRadius: 3,
+                  indicatorBorderWidth: 1.5,
+                  currentIndicatorColor: Colors.black,
+                ),
+                children: [
+                  ClipRRect(
+                    child: Image.asset(
+                      'assets/images/test1.png',
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'assets/images/test1.png',
-                        fit: BoxFit.cover,
-                      ),
+                  ClipRRect(
+                    child: Image.asset(
+                      'assets/images/test4.png',
+                      fit: BoxFit.cover,
                     ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'assets/images/test4.png',
-                        fit: BoxFit.cover,
-                      ),
+                  ),
+                  ClipRRect(
+                    child: Image.asset(
+                      'assets/images/test5.png',
+                      fit: BoxFit.cover,
                     ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'assets/images/test5.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ]),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          // Catagory
-          Padding(
-            padding: const EdgeInsets.only(left: 25),
-            child: Text(
-              "Catagories",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
+                  ),
+                ]),
           ),
           const SizedBox(
             height: 10,
           ),
+          // Catagory
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              "Catagories",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
           Container(
-            height: 40,
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            height: 25,
             child: Expanded(
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 4,
+                itemCount: catagories.length,
                 // shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
-                      ),
-                      width: 80,
-                      height: 50,
-                      child: Center(
-                        child: Text(
-                          catagories[index],
-                          style: const TextStyle(
-                              fontSize: 18, color: Colors.black),
-                        ),
+                  return Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Colors.white,
+                    ),
+                    width: 70,
+                    child: Center(
+                      child: Text(
+                        catagories[index],
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.black),
                       ),
                     ),
                   );
@@ -151,22 +140,24 @@ class _ShoePageState extends State<ShoePage> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
                   "Hot Picks 🔥",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'See all',
                   style: TextStyle(
-                      color: Colors.blue, fontWeight: FontWeight.bold),
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12),
                 )
               ],
             ),
@@ -176,7 +167,7 @@ class _ShoePageState extends State<ShoePage> {
           ),
           // code a horizontal listview with 5 items
           Container(
-            height: MediaQuery.of(context).size.height - 360,
+            height: MediaQuery.of(context).size.height - 310,
             child: Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -193,7 +184,7 @@ class _ShoePageState extends State<ShoePage> {
           ),
 
           const Padding(
-            padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
+            padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
             child: Divider(
               color: Colors.white,
             ),
@@ -203,7 +194,7 @@ class _ShoePageState extends State<ShoePage> {
           ),
           // code a bottom navigation bar with 4 items
           Container(
-            height: MediaQuery.of(context).size.height - 50,
+            height: MediaQuery.of(context).size.height - 100,
             child: Discount(),
           )
         ],

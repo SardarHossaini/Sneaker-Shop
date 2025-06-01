@@ -16,16 +16,16 @@ class ShoeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
-      margin: EdgeInsets.only(left: 20, right: 15),
+      width: 250,
+      margin: EdgeInsets.only(left: 15, right: 5),
       decoration: BoxDecoration(
-          color: Colors.grey[100], borderRadius: BorderRadius.circular(12)),
+          color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // image
           ClipRRect(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(8),
             child: Image.asset(
               shoe.imagepath,
             ),
@@ -34,26 +34,37 @@ class ShoeTile extends StatelessWidget {
             height: 25,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 18,
+                ),
+                child: Text(
+                  shoe.name,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 18),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 18),
+                child: Text(
+                  shoe.description,
+                  style: TextStyle(color: Colors.grey[600]),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 18, right: 18, bottom: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          shoe.name,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 20),
-                        ),
-                        Text(
-                          "\$" + shoe.price,
-                          style: TextStyle(color: Colors.grey),
-                        )
-                      ],
+                    Text(
+                      "\$" + shoe.price,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
                     ),
                     Row(
                       children: [
@@ -83,13 +94,6 @@ class ShoeTile extends StatelessWidget {
                 ),
               ),
               // description
-              Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 18),
-                child: Text(
-                  shoe.description,
-                  style: TextStyle(color: Colors.grey[600]),
-                ),
-              ),
             ],
           )
           // price + details
