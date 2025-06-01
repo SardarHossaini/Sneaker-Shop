@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 // import 'package:sneaker_shop/const.dart';
-import 'package:sneaker_shop/homePage.dart';
+// import 'package:sneaker_shop/homePage.dart';
 import 'package:sneaker_shop/pages/login.dart';
 import 'package:sneaker_shop/pages/signUp.dart';
 
@@ -12,83 +11,70 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(
-        //     colors: [
-        //       Colors.white,
-        //       Colors.yellow.shade300,
-        //     ], // Change to your preferred colors
-        //     // stops: [0.0, 0.0],
-        //     begin: Alignment.topLeft,
-        //     end: Alignment.bottomRight,
-        //   ),
-        // ),
         width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                "assets/images/logo.png",
-                height: 200,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Brand new sneaker and custom kicks made with premium quality.",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 16),
-              ),
-              SizedBox(
-                height: 100,
-              ),
-              Container(
-                  decoration: BoxDecoration(),
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 15),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
-                    },
-                    child: Text("Login"),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black87,
-                        foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 23),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12))),
-                  )),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                  decoration: BoxDecoration(),
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 15),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUp()));
-                    },
-                    child: Text("Sign Up"),
-                    style: ElevatedButton.styleFrom(
-                        // backgroundColor: Colors.black87,
-                        side: BorderSide(
-                          color: Colors.black87,
-                          width: 1,
-                        ),
-                        elevation: 0,
-                        foregroundColor: Colors.black,
-                        padding: EdgeInsets.symmetric(vertical: 23),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12))),
-                  )),
-            ],
-          ),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/images/logo.png",
+              height: 150,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Brand new sneaker and custom kicks made with premium quality.",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey, fontSize: 16),
+            ),
+            SizedBox(
+              height: 130,
+            ),
+            Container(
+                decoration: BoxDecoration(),
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 15),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
+                  },
+                  child: Text("Login"),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black87,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8))),
+                )),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+                decoration: BoxDecoration(),
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 15),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUp()));
+                  },
+                  child: Text("Sign Up"),
+                  style: ElevatedButton.styleFrom(
+                      // backgroundColor: Colors.black87,
+                      side: BorderSide(
+                        color: Colors.black87,
+                        width: 1,
+                      ),
+                      elevation: 0,
+                      foregroundColor: Colors.black,
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8))),
+                )),
+          ],
         ),
       ),
     );

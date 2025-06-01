@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:sneaker_shop/introPage.dart';
 import 'package:sneaker_shop/pages/outBorading.dart';
-
-
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -58,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Image.asset(
                 'assets/images/logo.png',
-                height: 200,
+                height: 150,
               ),
               SizedBox(height: 20),
               Text(

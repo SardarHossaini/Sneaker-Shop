@@ -17,7 +17,7 @@ class ShoePage extends StatefulWidget {
 }
 
 class _ShoePageState extends State<ShoePage> {
-  List<String> catagories = ["All", "Men", "Women", "Kids"];
+  List<String> catagories = ["All", "Men", "Women", "Kids", "Sport"];
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
 
