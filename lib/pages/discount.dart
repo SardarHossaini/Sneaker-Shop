@@ -47,6 +47,8 @@ class _DiscountState extends State<Discount> {
             ));
   }
 
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -87,6 +89,7 @@ class _DiscountState extends State<Discount> {
                 ),
                 Expanded(
                   child: ListView.builder(
+                      controller: _scrollController,
                       itemCount: 4,
                       itemBuilder: (context, index) {
                         // return Text("test");

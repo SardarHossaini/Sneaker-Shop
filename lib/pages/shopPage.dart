@@ -57,6 +57,47 @@ class _ShoePageState extends State<ShoePage> {
     return Consumer<Cart>(
       builder: (context, value, child) => ListView(
         children: [
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 15),
+          //   child: Text(
+          //     "Catagories",
+          //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          //   ),
+          // ),
+          const SizedBox(
+            height: 5,
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            height: 25,
+            child: Expanded(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: catagories.length,
+                // shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Colors.white,
+                    ),
+                    width: 70,
+                    child: Center(
+                      child: Text(
+                        catagories[index],
+                        style:
+                            const TextStyle(fontSize: 14, color: Colors.black),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
           // Slider
           Container(
             decoration: BoxDecoration(
@@ -101,47 +142,7 @@ class _ShoePageState extends State<ShoePage> {
             height: 10,
           ),
           // Catagory
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text(
-              "Catagories",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 15, right: 15),
-            height: 25,
-            child: Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: catagories.length,
-                // shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: Colors.white,
-                    ),
-                    width: 70,
-                    child: Center(
-                      child: Text(
-                        catagories[index],
-                        style:
-                            const TextStyle(fontSize: 14, color: Colors.black),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
+
           const Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(

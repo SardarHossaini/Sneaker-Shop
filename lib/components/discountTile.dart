@@ -86,7 +86,7 @@ class DiscountTile extends StatelessWidget {
                         child: Center(
                           child: Text(
                             shoe.discount,
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                           ),
                         ),
                       )
