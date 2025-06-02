@@ -66,7 +66,7 @@ class IntroPage extends StatelessWidget {
                       // backgroundColor: Colors.black87,
                       side: BorderSide(
                         color: Colors.black87,
-                        width: 1,
+                        width: 0.5,
                       ),
                       elevation: 0,
                       foregroundColor: Colors.black,

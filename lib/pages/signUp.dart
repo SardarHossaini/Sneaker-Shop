@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/pages/login.dart';
+import 'package:sneaker_shop/pages/termService.dart';
 
 import '../homePage.dart';
 
@@ -24,7 +25,7 @@ class _SignUpState extends State<SignUp> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 30,
+                  height: 10,
                 ),
                 Center(
                   child: Image.asset(
@@ -49,7 +50,9 @@ class _SignUpState extends State<SignUp> {
                   decoration: InputDecoration(
                       hintText: "Name",
                       hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black, width: 0),
+                      ),
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
                 ),
@@ -60,7 +63,9 @@ class _SignUpState extends State<SignUp> {
                   decoration: InputDecoration(
                       hintText: "Email",
                       hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey, width: 0.5),
+                      ),
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
                 ),
@@ -93,7 +98,19 @@ class _SignUpState extends State<SignUp> {
                       activeColor: Colors.black87,
                       checkColor: Colors.white,
                     ),
-                    const Text("I agree to the Terms and Conditions"),
+                    const Text("I agree to the "),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TermService()));
+                      },
+                      child: Text(
+                        "Terms of Service",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -173,19 +190,19 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                 ]),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("already have an account?"),
+                    const Text("already have an account?"),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Login()));
                       },
-                      child: Text(
+                      child: const Text(
                         "login",
                         style: TextStyle(color: Colors.blue),
                       ),
