@@ -154,10 +154,7 @@ class _ShoePageState extends State<ShoePage> {
                 ),
                 Text(
                   'See all',
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12),
+                  style: TextStyle(color: Colors.blue, fontSize: 12),
                 )
               ],
             ),
@@ -194,7 +191,7 @@ class _ShoePageState extends State<ShoePage> {
           ),
           // code a bottom navigation bar with 4 items
           Container(
-            height: MediaQuery.of(context).size.height - 100,
+            height: MediaQuery.of(context).size.height,
             child: Discount(),
           )
         ],

@@ -53,20 +53,31 @@ class _DiscountState extends State<Discount> {
         builder: (context, value, childe) => Column(
               children: [
                 const Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
-                        "Hot Discount 🔥",
-                        style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Text(
+                            "Hot Discount ",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Icon(
+                            Icons.local_offer,
+                            color: Colors.red,
+                            size: 16,
+                          ),
+                        ],
                       ),
                       Text(
                         'See all',
                         style: TextStyle(
-                            color: Colors.blue, fontWeight: FontWeight.bold),
+                          fontSize: 12,
+                          color: Colors.blue,
+                        ),
                       )
                     ],
                   ),

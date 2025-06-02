@@ -14,12 +14,12 @@ class DiscountTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
-      height: 150,
+      margin: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+      height: 130,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,8 +28,8 @@ class DiscountTile extends StatelessWidget {
           Row(
             children: [
               Container(
-                height: 150,
-                width: 150,
+                height: 130,
+                width: 130,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(shoe.imagepath),
@@ -39,7 +39,7 @@ class DiscountTile extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                width: 30,
+                width: 10,
               ),
               // Text
               Column(
@@ -49,14 +49,17 @@ class DiscountTile extends StatelessWidget {
                   Text(
                     shoe.name,
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20),
+                        fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "\$" + shoe.price,
                         style: TextStyle(
+                            fontSize: 14,
                             color: Colors.grey[400],
                             decoration: TextDecoration.lineThrough),
                       ),
@@ -65,51 +68,61 @@ class DiscountTile extends StatelessWidget {
                       ),
                       Text(
                         "\$" + shoe.discountPrice,
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        width: 60,
+                        height: 26,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            shoe.discount,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       )
                     ],
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    width: 100,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text(
-                        shoe.discount,
-                        style: TextStyle(color: Colors.white),
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: onTab,
+                        child: const Icon(
+                          Icons.shopping_bag,
+                          color: Colors.black,
+                          // size: 20,
+                        ),
                       ),
-                    ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      GestureDetector(
+                        onTap: onTab2,
+                        child: const Icon(
+                          Icons.favorite,
+                          color: Colors.black,
+                          // size: 20,
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
             ],
           ),
           // Button
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: onTab2,
-                  icon: const Icon(
-                    Icons.favorite,
-                    color: Colors.black,
-                    size: 26,
-                  )),
-              IconButton(
-                  onPressed: onTab,
-                  icon: const Icon(
-                    Icons.shopping_bag,
-                    color: Colors.black,
-                    size: 26,
-                  )),
-            ],
-          )
         ],
       ),
     );
