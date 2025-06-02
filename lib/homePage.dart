@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sneaker_shop/components/appBarComponent.dart';
 import 'package:sneaker_shop/components/drawer.dart';
 import 'package:sneaker_shop/components/myBottomNavBar.dart';
+import 'package:sneaker_shop/pages/addPage.dart';
 import 'package:sneaker_shop/pages/favoritePage.dart';
+import 'package:sneaker_shop/pages/shoppingPage.dart';
 import 'const.dart';
 
 // import 'pages/aboutPage.dart';
@@ -28,9 +30,10 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> pages = [
     ShoePage(),
-    CartPage(),
+    ShoppingPage(),
+    AddPage(),
     FavoritePage(),
-    ProfilePage(),
+    CartPage(),
   ];
 
   @override

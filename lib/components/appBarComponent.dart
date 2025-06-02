@@ -13,18 +13,12 @@ PreferredSizeWidget Appbarcomponent() {
     centerTitle: true,
     actions: [
       Padding(
-        padding: const EdgeInsets.all(0),
-        child: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.notifications),
-        ),
+        padding: const EdgeInsets.all(6),
+        child: GestureDetector(child: Icon(Icons.notifications)),
       ),
       Padding(
-        padding: const EdgeInsets.only(right: 12),
-        child: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.person),
-        ),
+        padding: const EdgeInsets.only(right: 12, left: 6),
+        child: GestureDetector(child: Icon(Icons.person)),
       ),
     ],
     leading: Builder(

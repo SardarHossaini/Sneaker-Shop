@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
+import 'package:sneaker_shop/const.dart';
 import 'package:sneaker_shop/model/cart.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 import 'package:sneaker_shop/pages/discount.dart';
@@ -17,7 +18,6 @@ class ShoePage extends StatefulWidget {
 }
 
 class _ShoePageState extends State<ShoePage> {
-  List<String> catagories = ["All", "Men", "Women", "Kids", "Sport"];
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
 
@@ -64,9 +64,9 @@ class _ShoePageState extends State<ShoePage> {
           //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           //   ),
           // ),
-          const SizedBox(
-            height: 5,
-          ),
+          // const SizedBox(
+          //   height: 5,
+          // ),
           Container(
             padding: const EdgeInsets.only(left: 15, right: 15),
             height: 25,
@@ -77,12 +77,12 @@ class _ShoePageState extends State<ShoePage> {
                 // shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
                       color: Colors.white,
                     ),
-                    width: 70,
                     child: Center(
                       child: Text(
                         catagories[index],
@@ -192,9 +192,47 @@ class _ShoePageState extends State<ShoePage> {
           ),
           // code a bottom navigation bar with 4 items
           Container(
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height - 30,
             child: Discount(),
-          )
+          ),
+          // Newest
+          const Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  "Newest 🆕",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  'See all',
+                  style: TextStyle(color: Colors.blue, fontSize: 12),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          // code a horizontal listview with 5 items
+          Container(
+            height: MediaQuery.of(context).size.height - 320,
+            child: Expanded(
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    Shoe eachShoe = value.getNewestShoeList()[index];
+                    return ShoeTile(
+                      shoe: eachShoe,
+                      onTab: () => addShoeToCart(eachShoe),
+                      onTab2: () => addShoeToFavorite(eachShoe),
+                    );
+                  }),
+            ),
+          ),
         ],
       ),
     );

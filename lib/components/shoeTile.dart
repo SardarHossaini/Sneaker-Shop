@@ -17,7 +17,7 @@ class ShoeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 250,
-      margin: EdgeInsets.only(left: 15, right: 5),
+      margin: EdgeInsets.only(left: 15, right: 5, bottom: 15),
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
       child: Column(

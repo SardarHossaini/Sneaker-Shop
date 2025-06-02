@@ -63,7 +63,7 @@ class _DiscountState extends State<Discount> {
                       Row(
                         children: [
                           Text(
-                            "Hot Discount ",
+                            "Best Discount ",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),

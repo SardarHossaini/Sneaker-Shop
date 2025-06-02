@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+class AddPage extends StatelessWidget {
+  const AddPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Add Page"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Text(
+          "This is the Add Page",
+          style: TextStyle(fontSize: 24, color: Colors.black54),
+        ),
+      ),
+    );
+  }
+}
