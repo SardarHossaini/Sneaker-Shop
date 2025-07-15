@@ -30,6 +30,13 @@ class _HomePageState extends State<HomePage> {
     const FavoritePage(),
     const CartPage(),
   ];
+  final List<String> titles = [
+    'Bootique',
+    "Shopping",
+    "Create ADS",
+    "Notifications",
+    "Profile"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomNavBar(index),
       ),
-      appBar: Appbarcomponent(),
+      appBar: Appbarcomponent(title: titles[_selectedIndex]),
       drawer: const DrawerComponent(),
       body: pages[_selectedIndex],
     );
