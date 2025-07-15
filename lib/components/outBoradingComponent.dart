@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/const.dart';
 
 class OutBoardingComponent extends StatelessWidget {
   final String title;
@@ -14,7 +15,7 @@ class OutBoardingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: EdgeInsets.symmetric(horizontal: spacingPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -22,24 +23,48 @@ class OutBoardingComponent extends StatelessWidget {
             imageUrl,
             height: 150,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 20,
+            style: TextStyle(
+              fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: primaryColor,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           Text(
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.grey[700],
+              color: secondaryColor,
               fontSize: 14,
             ),
           ),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: Container(
+          //         color: Colors.red,
+          //         margin: EdgeInsets.symmetric(horizontal: 3),
+          //         child: const Text(
+          //           "Pervious",
+          //           style: TextStyle(color: Colors.white),
+          //         ),
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: Container(
+          //         color: Colors.red,
+          //         margin: EdgeInsets.symmetric(horizontal: 3),
+          //         child: const Text(
+          //           "Next",
+          //           style: TextStyle(color: Colors.white),
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // )
         ],
       ),
     );

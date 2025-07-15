@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/const.dart';
 
 import 'package:sneaker_shop/pages/outBorading.dart';
 
@@ -47,13 +48,13 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset(
               'assets/images/logo.png',
-              height: 150,
+              height: 140,
             ),
             const SizedBox(height: 20),
             Text(
               "Welcome to Boot Shop",
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey[700], fontSize: 16),
+              style: TextStyle(color: secondaryColor, fontSize: 16),
             ),
           ],
         ),

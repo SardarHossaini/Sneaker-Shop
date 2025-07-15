@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:sneaker_shop/model/cart.dart';
-// import 'package:sneaker_shop/model/shoe.dart';
-// import 'package:sneaker_shop/model/cart.dart';
-// import 'package:sneaker_shop/model/shoe.dart';
 
-var background = Colors.grey[300];
+Color? secondaryColor = Colors.grey[600];
+Color primaryColor = Colors.black87;
+double spacingPadding = 24;
 
 List<String> catagories = [
   "All",
@@ -20,5 +17,3 @@ List<String> catagories = [
   "Ankle",
   "Rain",
 ];
-
-
