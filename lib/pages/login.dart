@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/components/customTextFeild.dart';
+import 'package:sneaker_shop/const.dart';
 import 'package:sneaker_shop/homePage.dart';
 import 'package:sneaker_shop/pages/signUp.dart';
 
@@ -8,98 +10,103 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 30,
+              const SizedBox(
+                height: 24,
               ),
               Center(
                 child: Image.asset(
                   "assets/images/logo.png",
-                  height: 80,
+                  height: 70,
                 ),
               ),
-              SizedBox(
-                height: 20,
+              const SizedBox(
+                height: 4,
+              ),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Login to your account",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    "From casual to classy, explore a wide range of shoes neatly displayed for you.",
+                    style: TextStyle(fontSize: 12),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Customtextfeild(
+                title: "Email",
+                hintText: "example@gmail.com",
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Customtextfeild(
+                title: "Password",
+                icon: true,
+                obScureText: true,
               ),
               Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Login to your account",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Forgot Password?",
+                        style: TextStyle(color: thirdColor, fontSize: 12),
+                      )),
                 ),
               ),
               SizedBox(
-                height: 20,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    hintText: "Email",
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder(),
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    hintText: "Password",
-                    suffix: Icon(Icons.remove_red_eye_rounded),
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder(),
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
-              ),
-              TextButton(
-                  style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
-                  onPressed: () {},
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(color: Colors.blue),
-                  )),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                  decoration: BoxDecoration(),
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()));
                     },
-                    child: Text("Login"),
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black87,
                         foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4))),
+                            borderRadius: BorderRadius.circular(6))),
+                    child: const Text("Login"),
                   )),
-              SizedBox(
-                height: 20,
+              const SizedBox(
+                height: 16,
               ),
-              Center(
+              const Center(
                 child: Text(
-                  "───────── Or sign in with ─────────",
+                  "────────────   or   ────────────",
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Container(
                   height: 40,
                   width: 40,
-                  margin: EdgeInsets.only(right: 15, left: 15),
+                  margin: const EdgeInsets.only(right: 15, left: 15),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.grey)),
@@ -113,7 +120,7 @@ class Login extends StatelessWidget {
                 Container(
                   height: 40,
                   width: 40,
-                  margin: EdgeInsets.only(right: 10, left: 10),
+                  margin: const EdgeInsets.only(right: 10, left: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.grey)),
@@ -127,7 +134,7 @@ class Login extends StatelessWidget {
                 Container(
                   height: 40,
                   width: 40,
-                  margin: EdgeInsets.only(right: 15, left: 15),
+                  margin: const EdgeInsets.only(right: 15, left: 15),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.grey)),
@@ -139,21 +146,31 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ]),
-              SizedBox(
-                height: 40,
+              const SizedBox(
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUp()));
+                  const Text(
+                    "Don't have an account? ",
+                    style: TextStyle(fontSize: 13),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignUp()));
                     },
                     child: Text(
                       "Sign Up",
-                      style: TextStyle(color: Colors.blue),
+                      style: TextStyle(
+                          color: thirdColor,
+                          decoration: TextDecoration.underline,
+                          decorationColor: thirdColor,
+                          decorationThickness: 2,
+                          fontSize: 13),
                     ),
                   ),
                 ],

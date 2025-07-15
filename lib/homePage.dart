@@ -5,7 +5,6 @@ import 'package:sneaker_shop/components/myBottomNavBar.dart';
 import 'package:sneaker_shop/pages/addPage.dart';
 import 'package:sneaker_shop/pages/favoritePage.dart';
 import 'package:sneaker_shop/pages/shoppingPage.dart';
-import 'const.dart';
 import 'pages/shopPage.dart';
 import 'pages/cartPage.dart';
 

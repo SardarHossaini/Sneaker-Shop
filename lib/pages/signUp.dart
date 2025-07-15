@@ -1,217 +1,185 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/components/customTextFeild.dart';
+import 'package:sneaker_shop/const.dart';
+import 'package:sneaker_shop/homePage.dart';
 import 'package:sneaker_shop/pages/login.dart';
-import 'package:sneaker_shop/pages/termService.dart';
 
-import '../homePage.dart';
-
-class SignUp extends StatefulWidget {
+class SignUp extends StatelessWidget {
   const SignUp({super.key});
-
-  @override
-  State<SignUp> createState() => _SignUpState();
-}
-
-class _SignUpState extends State<SignUp> {
-  bool value = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
-      children: [
+      backgroundColor: Colors.white,
+      body: ListView(children: [
         Container(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 10,
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 24,
+              ),
+              Center(
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  height: 70,
                 ),
-                Center(
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                    height: 80,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Create your account",
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Create new account",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    "From casual to classy, explore a wide range of shoes neatly displayed for you.",
+                    style: TextStyle(fontSize: 12),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Customtextfeild(
+                title: "Full Name",
+                hintText: "Sardar Hossaini",
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Customtextfeild(
+                title: "Email",
+                hintText: "example@gmail.com",
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Customtextfeild(
+                title: "Password",
+                icon: true,
+                obScureText: true,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                    style:
+                        TextButton.styleFrom(padding: const EdgeInsets.all(0)),
+                    onPressed: () {},
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(color: thirdColor),
+                    )),
+              ),
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black87,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6))),
+                    child: const Text("Login"),
+                  )),
+              const SizedBox(
+                height: 16,
+              ),
+              const Center(
+                child: Text(
+                  "────────────   or   ────────────",
+                  style: TextStyle(color: Colors.grey),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                      hintText: "Name",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black, width: 0),
-                      ),
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                      hintText: "Email",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey, width: 0.5),
-                      ),
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      hintText: "Password",
-                      suffix: Icon(Icons.remove_red_eye_rounded),
-                      hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(),
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Checkbox(
-                      value: value,
-                      onChanged: (bool? newValue) {
-                        setState(() {
-                          value = newValue!;
-                        });
-                      },
-                      activeColor: Colors.black87,
-                      checkColor: Colors.white,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Container(
+                  height: 40,
+                  width: 40,
+                  margin: const EdgeInsets.only(right: 15, left: 15),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border.all(color: Colors.grey)),
+                  child: Center(
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset("assets/images/google.png"),
                     ),
-                    const Text("I agree to the "),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TermService()));
-                      },
-                      child: Text(
-                        "Terms of Service",
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 20,
+                  ),
                 ),
                 Container(
-                    decoration: BoxDecoration(),
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage()));
-                      },
-                      child: Text("Sign Up"),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black87,
-                          foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(vertical: 15),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4))),
-                    )),
-                SizedBox(
-                  height: 20,
-                ),
-                Center(
-                  child: Text(
-                    "───────── Or sign up with ─────────",
-                    style: TextStyle(color: Colors.grey),
+                  height: 40,
+                  width: 40,
+                  margin: const EdgeInsets.only(right: 10, left: 10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border.all(color: Colors.grey)),
+                  child: Center(
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset("assets/images/apple.png"),
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
+                Container(
+                  height: 40,
+                  width: 40,
+                  margin: const EdgeInsets.only(right: 15, left: 15),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border.all(color: Colors.grey)),
+                  child: Center(
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Image.asset("assets/images/facebook.png"),
+                    ),
+                  ),
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Container(
-                    height: 40,
-                    width: 40,
-                    margin: EdgeInsets.only(right: 15, left: 15),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(color: Colors.grey)),
-                    child: Center(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Image.asset("assets/images/google.png"),
+              ]),
+              const SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("Already have account? "),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Login()));
+                    },
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        color: thirdColor,
+                        decoration: TextDecoration.underline,
+                        decorationColor: thirdColor,
+                        decorationThickness: 2,
                       ),
                     ),
                   ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    margin: EdgeInsets.only(right: 10, left: 10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(color: Colors.grey)),
-                    child: Center(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Image.asset("assets/images/apple.png"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    width: 40,
-                    margin: EdgeInsets.only(right: 15, left: 15),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(color: Colors.grey)),
-                    child: Center(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: Image.asset("assets/images/facebook.png"),
-                      ),
-                    ),
-                  ),
-                ]),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("already have an account?"),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
-                      },
-                      child: const Text(
-                        "login",
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )),
-      ],
-    ));
+                ],
+              ),
+            ],
+          ),
+        ),
+      ]),
+    );
   }
 }
