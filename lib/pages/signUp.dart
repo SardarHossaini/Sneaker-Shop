@@ -54,30 +54,40 @@ class SignUp extends StatelessWidget {
                 hintText: "Sardar Hossaini",
               ),
               const SizedBox(
-                height: 12,
+                height: 8,
               ),
               Customtextfeild(
                 title: "Email",
                 hintText: "example@gmail.com",
               ),
               const SizedBox(
-                height: 12,
+                height: 8,
               ),
               Customtextfeild(
                 title: "Password",
                 icon: true,
                 obScureText: true,
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: TextButton(
-                    style:
-                        TextButton.styleFrom(padding: const EdgeInsets.all(0)),
-                    onPressed: () {},
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Checkbox(
+                    value: true,
+                    onChanged: (value) {},
+                    activeColor: thirdColor,
+                  ),
+                  const Text(
+                    "agree with ",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
                     child: Text(
-                      "Forgot Password?",
+                      "condition & terms",
                       style: TextStyle(color: thirdColor),
-                    )),
+                    ),
+                  )
+                ],
               ),
               SizedBox(
                   width: double.infinity,
@@ -94,7 +104,7 @@ class SignUp extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 12),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6))),
-                    child: const Text("Login"),
+                    child: const Text("Sign up"),
                   )),
               const SizedBox(
                 height: 16,
@@ -176,6 +186,9 @@ class SignUp extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 30,
+              )
             ],
           ),
         ),

@@ -175,6 +175,9 @@ class Login extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(
+                height: 30,
+              )
             ],
           ),
         ),

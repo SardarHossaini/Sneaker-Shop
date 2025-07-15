@@ -20,7 +20,7 @@ class Customtextfeild extends StatefulWidget {
 }
 
 class _CustomtextfeildState extends State<Customtextfeild> {
-  Icon openEye = const Icon(Icons.remove_red_eye);
+  Icon? openEye;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +31,7 @@ class _CustomtextfeildState extends State<Customtextfeild> {
           style: TextStyle(color: secondaryColor, fontSize: 13),
         ),
         Container(
-          height: 40,
+          height: 44,
           child: TextField(
             obscureText: widget.obScureText,
             decoration: InputDecoration(
@@ -56,7 +56,10 @@ class _CustomtextfeildState extends State<Customtextfeild> {
                           setState(() {
                             widget.obScureText = !widget.obScureText;
                             if (widget.obScureText) {
-                              openEye = const Icon(Icons.remove_red_eye);
+                              openEye = const Icon(
+                                Icons.remove_red_eye,
+                                size: 20,
+                              );
                             } else {
                               openEye = const Icon(
                                 Icons.close,
