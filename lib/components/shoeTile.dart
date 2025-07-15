@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 
 class ShoeTile extends StatelessWidget {
   final Shoe shoe;
   final Function()? onTab;
   final Function()? onTab2;
-  ShoeTile(
+  const ShoeTile(
       {super.key,
       required this.shoe,
       required this.onTab,
@@ -17,7 +15,7 @@ class ShoeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 250,
-      margin: EdgeInsets.only(left: 15, right: 5, bottom: 15),
+      margin: const EdgeInsets.only(left: 15, right: 5, bottom: 15),
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
       child: Column(
@@ -30,7 +28,7 @@ class ShoeTile extends StatelessWidget {
               shoe.imagepath,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Column(
@@ -60,8 +58,8 @@ class ShoeTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "\$" + shoe.price,
-                      style: TextStyle(
+                      "\$${shoe.price}",
+                      style: const TextStyle(
                           color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),

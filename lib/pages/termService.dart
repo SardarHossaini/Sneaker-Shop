@@ -15,12 +15,12 @@ class TermService extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_back),
                     onPressed: () {
                       Navigator.pop(context);
                     },
                   ),
-                  Text(
+                  const Text(
                     "Terms of Service",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -52,7 +52,7 @@ class TermService extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(bottom: 20, top: 15),
+              padding:const EdgeInsets.only(bottom: 20, top: 15),
               color: Colors.grey.shade200,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -61,7 +61,7 @@ class TermService extends StatelessWidget {
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Text(
+                    child: const Text(
                       'Agree',
                     ),
                   ),
@@ -69,7 +69,7 @@ class TermService extends StatelessWidget {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: Text('Diagree'))
+                      child:const Text('Diagree'))
                 ],
               ),
             )

@@ -14,7 +14,7 @@ class OutBoardingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -22,16 +22,16 @@ class OutBoardingComponent extends StatelessWidget {
             imageUrl,
             height: 150,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             description,
             textAlign: TextAlign.center,

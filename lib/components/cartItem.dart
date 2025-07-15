@@ -5,7 +5,7 @@ import 'package:sneaker_shop/model/shoe.dart';
 
 class CartItem extends StatefulWidget {
   final Shoe shoe;
-  CartItem({super.key, required this.shoe});
+  const CartItem({super.key, required this.shoe});
 
   @override
   State<CartItem> createState() => _CartItemState();
@@ -22,7 +22,7 @@ class _CartItemState extends State<CartItem> {
     return Container(
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
-      margin: EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: ListTile(
         leading: ClipRRect(
             borderRadius: BorderRadius.circular(8),
@@ -33,21 +33,21 @@ class _CartItemState extends State<CartItem> {
         subtitle: widget.shoe.discount != "0%"
             ? Text(
                 "\$${widget.shoe.discountPrice}",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.bold,
                 ),
               )
             : Text(
                 "\$${widget.shoe.price}",
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
         trailing: IconButton(
           onPressed: removeItem,
-          icon: Icon(
+          icon: const Icon(
             Icons.delete,
           ),
         ),
