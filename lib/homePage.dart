@@ -5,7 +5,7 @@ import 'package:sneaker_shop/components/myBottomNavBar.dart';
 import 'package:sneaker_shop/pages/addPage.dart';
 import 'package:sneaker_shop/pages/favoritePage.dart';
 import 'package:sneaker_shop/pages/shoppingPage.dart';
-import 'pages/shopPage.dart';
+import 'pages/loadingPage.dart';
 import 'pages/cartPage.dart';
 
 class HomePage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> pages = [
-    const ShoePage(),
+    const LoadingPage(),
     const ShoppingPage(),
     const AddPage(),
     const FavoritePage(),

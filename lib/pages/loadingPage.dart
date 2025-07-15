@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
 import 'package:sneaker_shop/const.dart';
@@ -10,14 +8,14 @@ import 'package:sneaker_shop/model/shoe.dart';
 import 'package:sneaker_shop/pages/discount.dart';
 import "package:flutter_carousel_slider/carousel_slider.dart";
 
-class ShoePage extends StatefulWidget {
-  const ShoePage({super.key});
+class LoadingPage extends StatefulWidget {
+  const LoadingPage({super.key});
 
   @override
-  State<ShoePage> createState() => _ShoePageState();
+  State<LoadingPage> createState() => _LoadingPageState();
 }
 
-class _ShoePageState extends State<ShoePage> {
+class _LoadingPageState extends State<LoadingPage> {
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
 

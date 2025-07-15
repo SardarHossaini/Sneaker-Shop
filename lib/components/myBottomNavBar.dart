@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:sneaker_shop/const.dart';
 
 class MyBottomNavBar extends StatelessWidget {
   final Function(int)? onTabChange;
@@ -8,16 +9,14 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 13),
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: GNav(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         color: Colors.grey[400],
         tabActiveBorder: Border.all(color: Colors.white),
-        activeColor: Colors.black,
-        tabBackgroundColor: Colors.grey.shade100,
-        // tabMargin: EdgeInsets.only(top: 12),
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        activeColor: primaryColor,
+        tabBackgroundColor: thirdColor,
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         onTabChange: (value) => onTabChange!(value),
         tabs: const [
           GButton(
@@ -29,7 +28,7 @@ class MyBottomNavBar extends StatelessWidget {
             // text: "Cart",
           ),
           GButton(
-            icon: Icons.add,
+            icon: Icons.add_circle,
             // text: "Add",
           ),
           GButton(
