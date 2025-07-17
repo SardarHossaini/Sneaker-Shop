@@ -29,7 +29,7 @@ class ShoeTile extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 25,
+            height: 15,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class ShoeTile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 18),
+                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 0),
                 child: Text(
                   shoe.description,
                   style: TextStyle(color: Colors.grey[600]),

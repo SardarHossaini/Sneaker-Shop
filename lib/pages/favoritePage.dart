@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sneaker_shop/components/appBarComponent.dart';
 import 'package:sneaker_shop/model/cart.dart';
 
 import '../components/favoriteTile.dart';
@@ -11,26 +12,36 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(builder: (context, value, child) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              "My Favorite",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "My Favorite",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
             ),
-            const SizedBox(
-              height: 10,
-            ),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: value.getFavoriteShoes().length,
-                    itemBuilder: (context, index) {
-                      Shoe eachShoe = value.getFavoriteShoes()[index];
-                      return FavoriteTile(shoe: eachShoe);
-                    }))
-          ],
+          ),
+          centerTitle: true,
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              Expanded(
+                  child: ListView.builder(
+                      itemCount: value.getFavoriteShoes().length,
+                      itemBuilder: (context, index) {
+                        Shoe eachShoe = value.getFavoriteShoes()[index];
+                        return FavoriteTile(shoe: eachShoe);
+                      }))
+            ],
+          ),
         ),
       );
     });

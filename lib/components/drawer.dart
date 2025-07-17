@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/components/customListTile.dart';
 import 'package:sneaker_shop/const.dart';
-import 'package:sneaker_shop/feature/login.dart';
+import 'package:sneaker_shop/pages/login.dart';
 
 class DrawerComponent extends StatelessWidget {
   const DrawerComponent({super.key});
@@ -49,6 +49,17 @@ class DrawerComponent extends StatelessWidget {
               const Icon(
                 Icons.home_filled,
                 color: Colors.white,
+                size: 20,
+              ), () {
+            Navigator.pop(context);
+          }),
+          CustomListTile(
+              context,
+              'My Cart',
+              const Icon(
+                Icons.account_balance_wallet_rounded,
+                color: Colors.white,
+                size: 20,
               ), () {
             Navigator.pop(context);
           }),
@@ -58,15 +69,17 @@ class DrawerComponent extends StatelessWidget {
               const Icon(
                 Icons.favorite,
                 color: Colors.white,
+                size: 20,
               ), () {
             Navigator.pop(context);
           }),
           CustomListTile(
               context,
-              'My ADs',
+              'Settings',
               const Icon(
-                Icons.view_list_rounded,
+                Icons.settings_rounded,
                 color: Colors.white,
+                size: 20,
               ), () {
             Navigator.pop(context);
           }),
@@ -76,6 +89,7 @@ class DrawerComponent extends StatelessWidget {
               const Icon(
                 Icons.logout_outlined,
                 color: Colors.white,
+                size: 20,
               ), () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => const Login()));

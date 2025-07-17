@@ -28,15 +28,15 @@ class MyBottomNavBar extends StatelessWidget {
             // text: "Cart",
           ),
           GButton(
-            icon: Icons.add_circle,
+            icon: Icons.shopping_bag_rounded,
             // text: "Add",
           ),
           GButton(
-            icon: Icons.favorite,
+            icon: Icons.notifications,
             // text: "Favorites",
           ),
           GButton(
-            icon: Icons.shopping_bag,
+            icon: Icons.person,
             // text: "Profile",
           ),
         ],

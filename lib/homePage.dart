@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:sneaker_shop/components/appBarComponent.dart';
 import 'package:sneaker_shop/components/drawer.dart';
 import 'package:sneaker_shop/components/myBottomNavBar.dart';
-import 'package:sneaker_shop/pages/addPage.dart';
+import 'package:sneaker_shop/pages/cartPage.dart';
 import 'package:sneaker_shop/pages/favoritePage.dart';
+import 'package:sneaker_shop/pages/profilePage.dart';
 import 'package:sneaker_shop/pages/shoppingPage.dart';
 import 'pages/loadingPage.dart';
-import 'pages/cartPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,14 +26,14 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> pages = [
     const LoadingPage(),
     const ShoppingPage(),
-    const AddPage(),
-    const FavoritePage(),
     const CartPage(),
+    const FavoritePage(),
+    const ProfilePage(),
   ];
   final List<String> titles = [
     'Bootique',
     "Shopping",
-    "Create ADS",
+    "My Card",
     "Notifications",
     "Profile"
   ];
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomNavBar(index),
       ),
-      appBar: Appbarcomponent(title: titles[_selectedIndex]),
+      appBar: Appbarcomponent(context, titles[_selectedIndex]),
       drawer: const DrawerComponent(),
       body: pages[_selectedIndex],
     );

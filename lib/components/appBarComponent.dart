@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/pages/favoritePage.dart';
 
 // ignore: non_constant_identifier_names
-PreferredSizeWidget Appbarcomponent({title}) {
+PreferredSizeWidget Appbarcomponent(BuildContext context, title) {
   return AppBar(
     title: Text(
       title,
@@ -16,10 +17,14 @@ PreferredSizeWidget Appbarcomponent({title}) {
       Container(
         padding: const EdgeInsets.only(right: 12, left: 6),
         child: GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const FavoritePage()));
+            },
             child: const Icon(
-          Icons.favorite,
-          size: 22,
-        )),
+              Icons.favorite,
+              size: 22,
+            )),
       ),
     ],
     elevation: 0,
