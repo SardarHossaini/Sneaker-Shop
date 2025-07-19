@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sneaker_shop/components/appBarComponent.dart';
 import 'package:sneaker_shop/model/cart.dart';
 
 import '../components/favoriteTile.dart';

@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index) => navigateBottomNavBar(index),
       ),
       appBar: Appbarcomponent(context, titles[_selectedIndex]),
-      drawer: const DrawerComponent(),
+      drawer: DrawerComponent(context),
       body: pages[_selectedIndex],
     );
   }

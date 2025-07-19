@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/model/shoe.dart';
 
-class DiscountTile extends StatelessWidget {
+class DiscountTile extends StatefulWidget {
   final Shoe shoe;
   final Function()? onTab;
   final Function()? onTab2;
@@ -10,7 +10,11 @@ class DiscountTile extends StatelessWidget {
       required this.shoe,
       required this.onTab,
       required this.onTab2});
+  @override
+  State<DiscountTile> createState() => _DiscountTileState();
+}
 
+class _DiscountTileState extends State<DiscountTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +36,7 @@ class DiscountTile extends StatelessWidget {
                 width: 130,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(shoe.imagepath),
+                    image: AssetImage(widget.shoe.imagepath),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(10),
@@ -47,7 +51,7 @@ class DiscountTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    shoe.name,
+                    widget.shoe.name,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
                   ),
@@ -57,7 +61,7 @@ class DiscountTile extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "\$${shoe.price}",
+                        "\$${widget.shoe.price}",
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey[400],
@@ -67,7 +71,7 @@ class DiscountTile extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        "\$${shoe.discountPrice}",
+                        "\$${widget.shoe.discountPrice}",
                         style: const TextStyle(
                             color: Colors.black,
                             fontSize: 16,
@@ -85,7 +89,7 @@ class DiscountTile extends StatelessWidget {
                         ),
                         child: Center(
                           child: Text(
-                            shoe.discount,
+                            widget.shoe.discount,
                             style: const TextStyle(color: Colors.white),
                           ),
                         ),
@@ -98,7 +102,7 @@ class DiscountTile extends StatelessWidget {
                   Row(
                     children: [
                       GestureDetector(
-                        onTap: onTab,
+                        onTap: widget.onTab,
                         child: const Icon(
                           Icons.shopping_bag,
                           color: Colors.black,
@@ -109,7 +113,7 @@ class DiscountTile extends StatelessWidget {
                         width: 10,
                       ),
                       GestureDetector(
-                        onTap: onTab2,
+                        onTap: widget.onTab2,
                         child: const Icon(
                           Icons.favorite,
                           color: Colors.black,

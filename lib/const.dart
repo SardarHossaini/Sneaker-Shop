@@ -15,6 +15,17 @@ List<String> catagories = [
   "Waterproof",
   "Winter",
   "Sporty",
-  "Ankle",
   "Rain",
+];
+List<IconData> icons = [
+  Icons.grid_view_sharp,
+  Icons.man,
+  Icons.woman,
+  Icons.child_care,
+  Icons.hotel_class,
+  Icons.hiking,
+  Icons.water_sharp,
+  Icons.cloudy_snowing,
+  Icons.sports_soccer_outlined,
+  Icons.snowing,
 ];

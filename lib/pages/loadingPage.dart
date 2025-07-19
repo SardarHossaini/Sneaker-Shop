@@ -55,16 +55,6 @@ class _LoadingPageState extends State<LoadingPage> {
     return Consumer<Cart>(
       builder: (context, value, child) => ListView(
         children: [
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 15),
-          //   child: Text(
-          //     "Catagories",
-          //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          //   ),
-          // ),
-          // const SizedBox(
-          //   height: 5,
-          // ),
           Container(
             padding: const EdgeInsets.only(left: 15, right: 15),
             height: 25,
@@ -75,18 +65,29 @@ class _LoadingPageState extends State<LoadingPage> {
                 // shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
                     margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
                       color: Colors.white,
                     ),
-                    child: Center(
-                      child: Text(
-                        catagories[index],
-                        style:
-                            const TextStyle(fontSize: 14, color: Colors.black),
-                      ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          icons[index],
+                          size: 20,
+                        ),
+                        const SizedBox(
+                          width: 3,
+                        ),
+                        Center(
+                          child: Text(
+                            catagories[index],
+                            style: const TextStyle(
+                                fontSize: 14, color: Colors.black),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 },
@@ -98,23 +99,23 @@ class _LoadingPageState extends State<LoadingPage> {
           ),
           // Slider
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             width: double.infinity,
             height: 200,
             child: CarouselSlider(
-                enableAutoSlider: true, // این خط را اضافه کنید
-                autoSliderDelay: Duration(seconds: 3),
-                autoSliderTransitionTime: Duration(seconds: 1),
+                enableAutoSlider: true,
+                autoSliderDelay: const Duration(seconds: 3),
+                autoSliderTransitionTime: const Duration(seconds: 1),
                 unlimitedMode: true,
                 slideIndicator: CircularSlideIndicator(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  itemSpacing: 8,
-                  indicatorRadius: 3,
-                  indicatorBorderWidth: 1.5,
-                  currentIndicatorColor: Colors.black,
-                ),
+                    padding: const EdgeInsets.only(bottom: 10),
+                    itemSpacing: 8,
+                    indicatorRadius: 3,
+                    indicatorBorderWidth: 1.5,
+                    currentIndicatorColor: Colors.white,
+                    indicatorBackgroundColor: Colors.grey),
                 children: [
                   ClipRRect(
                     child: Image.asset(
@@ -140,20 +141,19 @@ class _LoadingPageState extends State<LoadingPage> {
             height: 10,
           ),
           // Catagory
-
-          const Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
+                const Text(
                   "Hot Picks 🔥",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'See all',
-                  style: TextStyle(color: Colors.blue, fontSize: 12),
+                  style: TextStyle(color: thirdColor, fontSize: 12),
                 )
               ],
             ),
@@ -163,7 +163,7 @@ class _LoadingPageState extends State<LoadingPage> {
           ),
           // code a horizontal listview with 5 items
           Container(
-            height: MediaQuery.of(context).size.height - 310,
+            height: MediaQuery.of(context).size.height - 350,
             child: Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -179,23 +179,17 @@ class _LoadingPageState extends State<LoadingPage> {
             ),
           ),
 
-          const Padding(
-            padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
-            child: Divider(
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(
-            height: 10,
+          const SizedBox(
+            height: 12,
           ),
           // code a bottom navigation bar with 4 items
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 30,
-            child: Discount(),
+            child: const Discount(),
           ),
           // Newest
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,

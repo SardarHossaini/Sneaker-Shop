@@ -15,17 +15,22 @@ class ShoeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 250,
-      margin: const EdgeInsets.only(left: 15, right: 5, bottom: 15),
+      margin: const EdgeInsets.only(left: 15, right: 5),
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(8)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           // image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              shoe.imagepath,
+          SizedBox(
+            height: 160,
+            width: double.infinity,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                shoe.imagepath,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           const SizedBox(
@@ -45,14 +50,17 @@ class ShoeTile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 0),
+                padding: const EdgeInsets.only(left: 18, right: 18),
                 child: Text(
                   shoe.description,
                   style: TextStyle(color: Colors.grey[600]),
                 ),
               ),
+              const SizedBox(
+                height: 8,
+              ),
               Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18, bottom: 10),
+                padding: const EdgeInsets.only(left: 18, right: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -73,7 +81,6 @@ class ShoeTile extends StatelessWidget {
                               child: const Icon(
                                 Icons.shopping_bag,
                                 color: Colors.black,
-                                size: 26,
                               )),
                         ),
                         GestureDetector(
@@ -83,7 +90,6 @@ class ShoeTile extends StatelessWidget {
                               child: const Icon(
                                 Icons.favorite,
                                 color: Colors.black,
-                                size: 26,
                               )),
                         ),
                       ],
