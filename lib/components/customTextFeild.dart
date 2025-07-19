@@ -30,7 +30,7 @@ class _CustomtextfeildState extends State<Customtextfeild> {
           widget.title,
           style: TextStyle(color: secondaryColor, fontSize: 13),
         ),
-        Container(
+        SizedBox(
           height: 44,
           child: TextField(
             obscureText: widget.obScureText,

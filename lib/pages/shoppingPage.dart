@@ -34,7 +34,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you cart"),
+              content: const Text("Check you cart"),
             ));
   }
 
@@ -51,7 +51,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
@@ -71,7 +71,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       // shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          padding:const EdgeInsets.symmetric(horizontal: 10),
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
@@ -102,7 +102,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       // shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          padding:const EdgeInsets.symmetric(horizontal: 10),
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
@@ -120,12 +120,12 @@ class _ShoppingPageState extends State<ShoppingPage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 // code a horizontal listview with 5 items
                 Container(
-                  padding: EdgeInsets.only(left: 0, right: 10),
+                  padding: const EdgeInsets.only(left: 0, right: 10),
                   // margin: EdgeInsets.only(bottom: 20),
                   height: MediaQuery.of(context).size.height - 234,
                   child: Expanded(

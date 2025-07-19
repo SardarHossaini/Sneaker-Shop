@@ -24,13 +24,13 @@ class TermService extends StatelessWidget {
                     "Terms of Service",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(width: 48), // Placeholder for the back button
+                  const SizedBox(width: 48), // Placeholder for the back button
                 ],
               ),
             ),
             const Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Text(
                     "Welcome to Sneaker Shop! By using our services, you agree to the following terms and conditions. Please read them carefully before using our app.\n\n"
                     "1. Acceptance of Terms\n"

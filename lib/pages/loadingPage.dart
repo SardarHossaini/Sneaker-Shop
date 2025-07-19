@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
@@ -30,7 +30,7 @@ class _LoadingPageState extends State<LoadingPage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you cart"),
+              content:const Text("Check you cart"),
             ));
   }
 
@@ -47,10 +47,11 @@ class _LoadingPageState extends State<LoadingPage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
+  @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
       builder: (context, value, child) => ListView(
@@ -158,11 +159,11 @@ class _LoadingPageState extends State<LoadingPage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 350,
             child: Expanded(
               child: ListView.builder(
@@ -205,11 +206,11 @@ class _LoadingPageState extends State<LoadingPage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 320,
             child: Expanded(
               child: ListView.builder(

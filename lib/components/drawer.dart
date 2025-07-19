@@ -3,6 +3,7 @@ import 'package:sneaker_shop/components/customListTile.dart';
 import 'package:sneaker_shop/const.dart';
 import 'package:sneaker_shop/pages/login.dart';
 
+// ignore: non_constant_identifier_names
 Widget DrawerComponent(BuildContext context) {
   return Drawer(
     width: 270,

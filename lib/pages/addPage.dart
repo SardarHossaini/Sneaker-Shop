@@ -10,7 +10,7 @@ class AddPage extends StatelessWidget {
         title: const Text("Add Page"),
         centerTitle: true,
       ),
-      body: Center(
+      body:const Center(
         child: Text(
           "This is the Add Page",
           style: TextStyle(fontSize: 24, color: Colors.black54),
