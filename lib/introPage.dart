@@ -21,58 +21,58 @@ class IntroPage extends StatelessWidget {
               "assets/images/logo.png",
               height: 150,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Brand new sneaker and custom kicks made with premium quality.",
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.grey, fontSize: 16),
             ),
-            SizedBox(
+            const SizedBox(
               height: 130,
             ),
             Container(
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Login()));
+                        MaterialPageRoute(builder: (context) => const Login()));
                   },
-                  child: Text("Login"),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black87,
                       foregroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8))),
+                  child: const Text("Login"),
                 )),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Container(
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUp()));
+                        MaterialPageRoute(builder: (context) => const SignUp()));
                   },
-                  child: Text("Sign Up"),
                   style: ElevatedButton.styleFrom(
                       // backgroundColor: Colors.black87,
-                      side: BorderSide(
+                      side: const BorderSide(
                         color: Colors.black87,
                         width: 0.5,
                       ),
                       elevation: 0,
                       foregroundColor: Colors.black,
-                      padding: EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8))),
+                  child: const Text("Sign Up"),
                 )),
           ],
         ),

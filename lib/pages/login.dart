@@ -14,7 +14,7 @@ class Login extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Center(
@@ -23,20 +23,20 @@ class Login extends StatelessWidget {
                   height: 80,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.center,
                 child: Text(
                   "Login to your account",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                     hintText: "Email",
                     hintStyle: TextStyle(color: Colors.grey),
@@ -44,10 +44,10 @@ class Login extends StatelessWidget {
                     contentPadding:
                         EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              TextField(
+              const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                     hintText: "Password",
@@ -58,48 +58,48 @@ class Login extends StatelessWidget {
                         EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
               ),
               TextButton(
-                  style: TextButton.styleFrom(padding: EdgeInsets.all(0)),
+                  style: TextButton.styleFrom(padding: const EdgeInsets.all(0)),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     "Forgot Password?",
                     style: TextStyle(color: Colors.blue),
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Container(
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                          MaterialPageRoute(builder: (context) => const HomePage()));
                     },
-                    child: Text("Login"),
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black87,
                         foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4))),
+                    child: const Text("Login"),
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Center(
+              const Center(
                 child: Text(
                   "───────── Or sign in with ─────────",
                   style: TextStyle(color: Colors.grey),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Container(
                   height: 40,
                   width: 40,
-                  margin: EdgeInsets.only(right: 15, left: 15),
+                  margin: const EdgeInsets.only(right: 15, left: 15),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.grey)),
@@ -113,7 +113,7 @@ class Login extends StatelessWidget {
                 Container(
                   height: 40,
                   width: 40,
-                  margin: EdgeInsets.only(right: 10, left: 10),
+                  margin: const EdgeInsets.only(right: 10, left: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.grey)),
@@ -127,7 +127,7 @@ class Login extends StatelessWidget {
                 Container(
                   height: 40,
                   width: 40,
-                  margin: EdgeInsets.only(right: 15, left: 15),
+                  margin: const EdgeInsets.only(right: 15, left: 15),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.grey)),
@@ -139,19 +139,19 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ]),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
+                  const Text("Don't have an account?"),
                   TextButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SignUp()));
+                          MaterialPageRoute(builder: (context) => const SignUp()));
                     },
-                    child: Text(
+                    child: const Text(
                       "Sign Up",
                       style: TextStyle(color: Colors.blue),
                     ),

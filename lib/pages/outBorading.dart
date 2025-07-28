@@ -19,7 +19,7 @@ class _OutBoardingState extends State<OutBoarding> {
         body: CarouselSlider(
           // slideTransform: StackTransform(),
           slideIndicator: CircularSlideIndicator(
-            padding: EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.only(bottom: 20),
             itemSpacing: 9,
             indicatorRadius: 3.4,
             // indicatorBorderWidth: 1.5,
@@ -43,7 +43,7 @@ class _OutBoardingState extends State<OutBoarding> {
                     "Enjoy lightning-fast delivery right to your doorstep. Your perfect pair of shoes is just a tap away!",
                 imageUrl: "assets/images/screen2.jpg"),
             Container(
-              child: IntroPage(),
+              child: const IntroPage(),
             )
           ],
         ));

@@ -51,13 +51,13 @@ class DiscountTile extends StatelessWidget {
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
                     children: [
                       Text(
-                        "\$" + shoe.price,
+                        "\$${shoe.price}",
                         style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey[400],
@@ -67,13 +67,13 @@ class DiscountTile extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        "\$" + shoe.discountPrice,
-                        style: TextStyle(
+                        "\$${shoe.discountPrice}",
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(

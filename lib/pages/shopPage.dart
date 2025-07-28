@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
 import 'package:sneaker_shop/const.dart';
@@ -32,7 +29,7 @@ class _ShoePageState extends State<ShoePage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you cart"),
+              content: const Text("Check you cart"),
             ));
   }
 
@@ -49,10 +46,11 @@ class _ShoePageState extends State<ShoePage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
+  @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
       builder: (context, value, child) => ListView(
@@ -77,7 +75,7 @@ class _ShoePageState extends State<ShoePage> {
                 // shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
@@ -100,15 +98,15 @@ class _ShoePageState extends State<ShoePage> {
           ),
           // Slider
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             width: double.infinity,
             height: 200,
             child: CarouselSlider(
                 enableAutoSlider: true, // این خط را اضافه کنید
-                autoSliderDelay: Duration(seconds: 3),
-                autoSliderTransitionTime: Duration(seconds: 1),
+                autoSliderDelay: const Duration(seconds: 3),
+                autoSliderTransitionTime: const Duration(seconds: 1),
                 unlimitedMode: true,
                 slideIndicator: CircularSlideIndicator(
                   padding: const EdgeInsets.only(bottom: 20),
@@ -144,7 +142,7 @@ class _ShoePageState extends State<ShoePage> {
           // Catagory
 
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -160,11 +158,11 @@ class _ShoePageState extends State<ShoePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 310,
             child: Expanded(
               child: ListView.builder(
@@ -182,22 +180,22 @@ class _ShoePageState extends State<ShoePage> {
           ),
 
           const Padding(
-            padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+            padding: EdgeInsets.only(top: 15, left: 15, right: 15),
             child: Divider(
               color: Colors.white,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a bottom navigation bar with 4 items
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 30,
-            child: Discount(),
+            child: const Discount(),
           ),
           // Newest
           const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -213,11 +211,11 @@ class _ShoePageState extends State<ShoePage> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
-          Container(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 320,
             child: Expanded(
               child: ListView.builder(

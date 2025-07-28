@@ -24,7 +24,7 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Center(
@@ -33,20 +33,20 @@ class _SignUpState extends State<SignUp> {
                     height: 80,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.center,
                   child: Text(
                     "Create your account",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                       hintText: "Name",
                       hintStyle: TextStyle(color: Colors.grey),
@@ -56,10 +56,10 @@ class _SignUpState extends State<SignUp> {
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                TextField(
+                const TextField(
                   decoration: InputDecoration(
                       hintText: "Email",
                       hintStyle: TextStyle(color: Colors.grey),
@@ -69,10 +69,10 @@ class _SignUpState extends State<SignUp> {
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                TextField(
+                const TextField(
                   obscureText: true,
                   decoration: InputDecoration(
                       hintText: "Password",
@@ -82,7 +82,7 @@ class _SignUpState extends State<SignUp> {
                       contentPadding:
                           EdgeInsets.symmetric(vertical: 5, horizontal: 10)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Row(
@@ -104,53 +104,53 @@ class _SignUpState extends State<SignUp> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => TermService()));
+                                builder: (context) => const TermService()));
                       },
-                      child: Text(
+                      child: const Text(
                         "Terms of Service",
                         style: TextStyle(color: Colors.blue),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
-                    decoration: BoxDecoration(),
+                    decoration: const BoxDecoration(),
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                                builder: (context) => const HomePage()));
                       },
-                      child: Text("Sign Up"),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black87,
                           foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(vertical: 15),
+                          padding: const EdgeInsets.symmetric(vertical: 15),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4))),
+                      child: const Text("Sign Up"),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                Center(
+                const Center(
                   child: Text(
                     "───────── Or sign up with ─────────",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Container(
                     height: 40,
                     width: 40,
-                    margin: EdgeInsets.only(right: 15, left: 15),
+                    margin: const EdgeInsets.only(right: 15, left: 15),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: Colors.grey)),
@@ -164,7 +164,7 @@ class _SignUpState extends State<SignUp> {
                   Container(
                     height: 40,
                     width: 40,
-                    margin: EdgeInsets.only(right: 10, left: 10),
+                    margin: const EdgeInsets.only(right: 10, left: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: Colors.grey)),
@@ -178,7 +178,7 @@ class _SignUpState extends State<SignUp> {
                   Container(
                     height: 40,
                     width: 40,
-                    margin: EdgeInsets.only(right: 15, left: 15),
+                    margin: const EdgeInsets.only(right: 15, left: 15),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border.all(color: Colors.grey)),
@@ -200,7 +200,7 @@ class _SignUpState extends State<SignUp> {
                     TextButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
+                            MaterialPageRoute(builder: (context) => const Login()));
                       },
                       child: const Text(
                         "login",

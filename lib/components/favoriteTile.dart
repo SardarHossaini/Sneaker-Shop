@@ -32,15 +32,15 @@ class _FavoriteTileState extends State<FavoriteTile> {
         title: Text(widget.shoe.name),
         subtitle: widget.shoe.discount != "0%"
             ? Text(
-                "\$" + widget.shoe.discountPrice,
+                "\$${widget.shoe.discountPrice}",
                 style: const TextStyle(
                     fontSize: 15,
                     color: Colors.red,
                     fontWeight: FontWeight.bold),
               )
             : Text(
-                "\$" + widget.shoe.price,
-                style: TextStyle(
+                "\$${widget.shoe.price}",
+                style: const TextStyle(
                     fontSize: 15,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
