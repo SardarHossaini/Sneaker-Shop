@@ -20,7 +20,7 @@ class DrawerComponent extends StatelessWidget {
                   height: 100,
                   color: Colors.white,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Divider(
                   color: Colors.grey[800],
                   thickness: 1,
@@ -32,8 +32,8 @@ class DrawerComponent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 5),
             child: ListTile(
-              leading: Icon(Icons.home, color: Colors.white),
-              title: Text(
+              leading: const Icon(Icons.home, color: Colors.white),
+              title: const Text(
                 'Home',
                 style: TextStyle(color: Colors.white),
               ),
@@ -45,8 +45,8 @@ class DrawerComponent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 5),
             child: ListTile(
-              leading: Icon(Icons.info, color: Colors.white),
-              title: Text(
+              leading: const Icon(Icons.info, color: Colors.white),
+              title: const Text(
                 'About',
                 style: TextStyle(color: Colors.white),
               ),
@@ -58,8 +58,8 @@ class DrawerComponent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 5),
             child: ListTile(
-              leading: Icon(Icons.logout_outlined, color: Colors.white),
-              title: Text(
+              leading: const Icon(Icons.logout_outlined, color: Colors.white),
+              title: const Text(
                 'Logout',
                 style: TextStyle(color: Colors.white),
               ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:sneaker_shop/introPage.dart';
 import 'package:sneaker_shop/pages/outBorading.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -15,19 +16,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // Wait for 3 seconds, then navigate
     // ...existing code...
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              OutBoarding(),
+              const OutBoarding(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(
               opacity: animation,
               child: child,
             );
           },
-          transitionDuration: Duration(milliseconds: 500),
+          transitionDuration: const Duration(milliseconds: 500),
         ),
       );
     });
@@ -38,17 +39,6 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(
-        //     colors: [
-        //       Colors.yellow,
-        //       Colors.black,
-        //     ], // Change to your preferred colors
-        //     stops: [0.0, 1.0],
-        //     begin: Alignment.topLeft,
-        //     end: Alignment.bottomRight,
-        //   ),
-        // ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 'assets/images/logo.png',
                 height: 150,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 "Welcome to Boot Shop",
                 textAlign: TextAlign.center,

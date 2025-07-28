@@ -8,8 +8,8 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 13),
-      padding: EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(top: 13),
+      padding: const EdgeInsets.only(bottom: 20),
       child: GNav(
         mainAxisAlignment: MainAxisAlignment.center,
         color: Colors.grey[400],
@@ -17,9 +17,9 @@ class MyBottomNavBar extends StatelessWidget {
         activeColor: Colors.black,
         tabBackgroundColor: Colors.grey.shade100,
         // tabMargin: EdgeInsets.only(top: 12),
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         onTabChange: (value) => onTabChange!(value),
-        tabs: [
+        tabs: const [
           GButton(
             icon: Icons.home_filled,
             // text: "Home",

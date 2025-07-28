@@ -26,7 +26,7 @@ class _DiscountState extends State<Discount> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you cart"),
+              content: const Text("Check you cart"),
             ));
   }
 
@@ -43,7 +43,7 @@ class _DiscountState extends State<Discount> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
@@ -55,7 +55,7 @@ class _DiscountState extends State<Discount> {
         builder: (context, value, childe) => Column(
               children: [
                 const Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -84,7 +84,7 @@ class _DiscountState extends State<Discount> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Expanded(

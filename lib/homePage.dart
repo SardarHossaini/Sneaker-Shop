@@ -9,7 +9,6 @@ import 'const.dart';
 
 // import 'pages/aboutPage.dart';
 // import 'pages/discount.dart';
-import 'pages/profilePage.dart';
 import 'pages/shopPage.dart';
 import 'pages/cartPage.dart';
 
@@ -29,11 +28,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> pages = [
-    ShoePage(),
-    ShoppingPage(),
-    AddPage(),
-    FavoritePage(),
-    CartPage(),
+    const ShoePage(),
+    const ShoppingPage(),
+    const AddPage(),
+    const FavoritePage(),
+    const CartPage(),
   ];
 
   @override
@@ -44,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index) => navigateBottomNavBar(index),
       ),
       appBar: Appbarcomponent(),
-      drawer: DrawerComponent(),
+      drawer: const DrawerComponent(),
       body: pages[_selectedIndex],
     );
   }
