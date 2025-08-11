@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:sneaker_shop/homePage.dart';
-// import 'package:sneaker_shop/homePage.dart';
-// import 'package:sneaker_shop/introPage.dart';
-// import 'package:sneaker_shop/pages/login.dart';
 import 'package:sneaker_shop/model/cart.dart';
 
 import 'pages/screenSplish.dart';
