@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-Color secondaryColor = Colors.grey.shade600;
+const Color primaryBlue = Color(0xFF0D47A1); // deep blue
+const Color accentBlue = Color(0xFF42A5F5); // bright blue
+const Color lightBlue = Color(0xFFE3F2FD); // very light
+const Color secondaryColor = Color(0xFF1976D2); // your existing text color
 Color primaryColor = Colors.black87;
 Color thirdColor = const Color.fromARGB(255, 253, 159, 37);
 double spacingPadding = 24;
