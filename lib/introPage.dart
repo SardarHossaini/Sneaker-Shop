@@ -48,7 +48,7 @@ class IntroPage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>  Login()));
+                                    builder: (context) => Login()));
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,
@@ -70,7 +70,7 @@ class IntroPage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const SignUp()));
+                                    builder: (context) => SignUp()));
                           },
                           style: ElevatedButton.styleFrom(
                               // backgroundColor: Colors.black87,
