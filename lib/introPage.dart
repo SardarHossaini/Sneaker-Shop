@@ -48,7 +48,7 @@ class IntroPage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Login()));
+                                    builder: (context) =>  Login()));
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: primaryColor,

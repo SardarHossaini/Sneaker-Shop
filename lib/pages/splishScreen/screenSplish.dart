@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneaker_shop/components/customSpinner.dart';
-import 'package:sneaker_shop/pages/outBorading.dart';
+import 'package:sneaker_shop/pages/onBoardingScreen/onBorading.dart';
 
 class AnimatedSplashScreen extends StatefulWidget {
   const AnimatedSplashScreen({super.key});
@@ -45,7 +45,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
 
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const OutBoarding(),
+          pageBuilder: (_, __, ___) => const AdvancedOutBoarding(),
           transitionDuration: const Duration(milliseconds: 600),
           transitionsBuilder: (_, animation, __, child) {
             return FadeTransition(opacity: animation, child: child);
@@ -57,7 +57,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
       if (!mounted) return;
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const OutBoarding(),
+          pageBuilder: (_, __, ___) => const AdvancedOutBoarding(),
           transitionDuration: const Duration(milliseconds: 600),
           transitionsBuilder: (_, animation, __, child) {
             return FadeTransition(opacity: animation, child: child);
