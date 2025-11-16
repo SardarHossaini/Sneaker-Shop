@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:sneaker_shop/const.dart';
 
 class OutBoardingComponent extends StatelessWidget {
+  final int id;
   final String title;
   final String description;
   final String imageUrl;
   const OutBoardingComponent({
     super.key,
+    required this.id,
     required this.title,
     required this.description,
     required this.imageUrl,
@@ -21,7 +23,7 @@ class OutBoardingComponent extends StatelessWidget {
         children: [
           Image.asset(
             imageUrl,
-            height: 150,
+            height: title == "Welcome to Sneaker Shop" ? 150 : 230,
           ),
           const SizedBox(height: 16),
           Text(

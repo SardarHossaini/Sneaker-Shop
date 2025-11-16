@@ -6,6 +6,7 @@ class ShoeTile extends StatelessWidget {
   final Function()? onTab;
   final Function()? onTab2;
   const ShoeTile(
+  const ShoeTile(
       {super.key,
       required this.shoe,
       required this.onTab,
@@ -66,6 +67,8 @@ class ShoeTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
+                      "\$${shoe.price}",
+                      style: const TextStyle(
                       "\$${shoe.price}",
                       style: const TextStyle(
                           color: Colors.black,

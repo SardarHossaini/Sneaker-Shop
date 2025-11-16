@@ -48,9 +48,11 @@ class _LoadingPageState extends State<LoadingPage> {
                 style: TextStyle(fontSize: 18),
               ),
               content: const Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
+  @override
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -100,6 +102,7 @@ class _LoadingPageState extends State<LoadingPage> {
           ),
           // Slider
           Container(
+            decoration: const BoxDecoration(
             decoration: const BoxDecoration(
               color: Colors.white,
             ),
@@ -160,6 +163,7 @@ class _LoadingPageState extends State<LoadingPage> {
             ),
           ),
           const SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
@@ -185,11 +189,14 @@ class _LoadingPageState extends State<LoadingPage> {
           ),
           // code a bottom navigation bar with 4 items
           SizedBox(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 30,
+            child: const Discount(),
             child: const Discount(),
           ),
           // Newest
           const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -207,9 +214,11 @@ class _LoadingPageState extends State<LoadingPage> {
             ),
           ),
           const SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
+          SizedBox(
           SizedBox(
             height: MediaQuery.of(context).size.height - 320,
             child: Expanded(

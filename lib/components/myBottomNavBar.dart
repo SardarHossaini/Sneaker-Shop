@@ -19,6 +19,7 @@ class MyBottomNavBar extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         onTabChange: (value) => onTabChange!(value),
         tabs: const [
+        tabs: const [
           GButton(
             icon: Icons.home_filled,
             // text: "Home",

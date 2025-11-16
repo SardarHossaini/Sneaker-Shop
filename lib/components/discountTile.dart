@@ -56,6 +56,7 @@ class _DiscountTileState extends State<DiscountTile> {
                         fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   const SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -111,14 +112,6 @@ class _DiscountTileState extends State<DiscountTile> {
                       ),
                       const SizedBox(
                         width: 10,
-                      ),
-                      GestureDetector(
-                        onTap: widget.onTab2,
-                        child: const Icon(
-                          Icons.favorite,
-                          color: Colors.black,
-                          // size: 20,
-                        ),
                       ),
                     ],
                   )

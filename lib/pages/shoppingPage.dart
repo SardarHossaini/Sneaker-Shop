@@ -52,6 +52,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                 style: TextStyle(fontSize: 18),
               ),
               content: const Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
