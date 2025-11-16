@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sneaker_shop/pages/login.dart';
+import 'package:sneaker_shop/const.dart';
 
 class OutBoardingComponent extends StatelessWidget {
   final int id;
@@ -17,7 +17,7 @@ class OutBoardingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 25),
+      padding: EdgeInsets.symmetric(horizontal: spacingPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -25,46 +25,48 @@ class OutBoardingComponent extends StatelessWidget {
             imageUrl,
             height: title == "Welcome to Sneaker Shop" ? 150 : 230,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 20,
+            style: TextStyle(
+              fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: primaryColor,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 8),
           Text(
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.grey[700],
+              color: secondaryColor,
               fontSize: 14,
             ),
           ),
-          const SizedBox(height: 30),
-          if (id == 3)
-            Container(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Login()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black87,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                child: const Text("Get Started"),
-              ),
-            ),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: Container(
+          //         color: Colors.red,
+          //         margin: EdgeInsets.symmetric(horizontal: 3),
+          //         child: const Text(
+          //           "Pervious",
+          //           style: TextStyle(color: Colors.white),
+          //         ),
+          //       ),
+          //     ),
+          //     Expanded(
+          //       child: Container(
+          //         color: Colors.red,
+          //         margin: EdgeInsets.symmetric(horizontal: 3),
+          //         child: const Text(
+          //           "Next",
+          //           style: TextStyle(color: Colors.white),
+          //         ),
+          //       ),
+          //     )
+          //   ],
+          // )
         ],
       ),
     );

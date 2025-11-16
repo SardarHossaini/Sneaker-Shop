@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sneaker_shop/components/shoeTile.dart';
@@ -7,14 +8,14 @@ import 'package:sneaker_shop/model/shoe.dart';
 import 'package:sneaker_shop/pages/discount.dart';
 import "package:flutter_carousel_slider/carousel_slider.dart";
 
-class ShoePage extends StatefulWidget {
-  const ShoePage({super.key});
+class LoadingPage extends StatefulWidget {
+  const LoadingPage({super.key});
 
   @override
-  State<ShoePage> createState() => _ShoePageState();
+  State<LoadingPage> createState() => _LoadingPageState();
 }
 
-class _ShoePageState extends State<ShoePage> {
+class _LoadingPageState extends State<LoadingPage> {
   void addShoeToCart(Shoe shoe) {
     Provider.of<Cart>(context, listen: false).addItemToUserCart(shoe);
 
@@ -29,7 +30,7 @@ class _ShoePageState extends State<ShoePage> {
                 "successfuly added",
                 style: TextStyle(fontSize: 18),
               ),
-              content: const Text("Check you cart"),
+              content:const Text("Check you cart"),
             ));
   }
 
@@ -47,24 +48,16 @@ class _ShoePageState extends State<ShoePage> {
                 style: TextStyle(fontSize: 18),
               ),
               content: const Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
+  @override
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
       builder: (context, value, child) => ListView(
         children: [
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 15),
-          //   child: Text(
-          //     "Catagories",
-          //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          //   ),
-          // ),
-          // const SizedBox(
-          //   height: 5,
-          // ),
           Container(
             padding: const EdgeInsets.only(left: 15, right: 15),
             height: 25,
@@ -75,18 +68,29 @@ class _ShoePageState extends State<ShoePage> {
                 // shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
                     margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
                       color: Colors.white,
                     ),
-                    child: Center(
-                      child: Text(
-                        catagories[index],
-                        style:
-                            const TextStyle(fontSize: 14, color: Colors.black),
-                      ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          icons[index],
+                          size: 20,
+                        ),
+                        const SizedBox(
+                          width: 3,
+                        ),
+                        Center(
+                          child: Text(
+                            catagories[index],
+                            style: const TextStyle(
+                                fontSize: 14, color: Colors.black),
+                          ),
+                        ),
+                      ],
                     ),
                   );
                 },
@@ -99,22 +103,23 @@ class _ShoePageState extends State<ShoePage> {
           // Slider
           Container(
             decoration: const BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             width: double.infinity,
             height: 200,
             child: CarouselSlider(
-                enableAutoSlider: true, // این خط را اضافه کنید
+                enableAutoSlider: true,
                 autoSliderDelay: const Duration(seconds: 3),
                 autoSliderTransitionTime: const Duration(seconds: 1),
                 unlimitedMode: true,
                 slideIndicator: CircularSlideIndicator(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  itemSpacing: 8,
-                  indicatorRadius: 3,
-                  indicatorBorderWidth: 1.5,
-                  currentIndicatorColor: Colors.black,
-                ),
+                    padding: const EdgeInsets.only(bottom: 10),
+                    itemSpacing: 8,
+                    indicatorRadius: 3,
+                    indicatorBorderWidth: 1.5,
+                    currentIndicatorColor: Colors.white,
+                    indicatorBackgroundColor: Colors.grey),
                 children: [
                   ClipRRect(
                     child: Image.asset(
@@ -140,30 +145,30 @@ class _ShoePageState extends State<ShoePage> {
             height: 10,
           ),
           // Catagory
-
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
+                const Text(
                   "Hot Picks 🔥",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'See all',
-                  style: TextStyle(color: Colors.blue, fontSize: 12),
+                  style: TextStyle(color: thirdColor, fontSize: 12),
                 )
               ],
             ),
           ),
           const SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
           SizedBox(
-            height: MediaQuery.of(context).size.height - 310,
+            height: MediaQuery.of(context).size.height - 350,
             child: Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -179,22 +184,19 @@ class _ShoePageState extends State<ShoePage> {
             ),
           ),
 
-          const Padding(
-            padding: EdgeInsets.only(top: 15, left: 15, right: 15),
-            child: Divider(
-              color: Colors.white,
-            ),
-          ),
           const SizedBox(
-            height: 10,
+            height: 12,
           ),
           // code a bottom navigation bar with 4 items
           SizedBox(
+          SizedBox(
             height: MediaQuery.of(context).size.height - 30,
+            child: const Discount(),
             child: const Discount(),
           ),
           // Newest
           const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -212,9 +214,11 @@ class _ShoePageState extends State<ShoePage> {
             ),
           ),
           const SizedBox(
+          const SizedBox(
             height: 10,
           ),
           // code a horizontal listview with 5 items
+          SizedBox(
           SizedBox(
             height: MediaQuery.of(context).size.height - 320,
             child: Expanded(

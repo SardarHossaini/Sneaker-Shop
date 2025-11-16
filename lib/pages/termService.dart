@@ -16,20 +16,24 @@ class TermService extends StatelessWidget {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_back),
                     onPressed: () {
                       Navigator.pop(context);
                     },
                   ),
                   const Text(
+                  const Text(
                     "Terms of Service",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
+                  const SizedBox(width: 48), // Placeholder for the back button
                   const SizedBox(width: 48), // Placeholder for the back button
                 ],
               ),
             ),
             const Expanded(
               child: SingleChildScrollView(
+                padding: EdgeInsets.all(16.0),
                 padding: EdgeInsets.all(16.0),
                 child: Text(
                     "Welcome to Sneaker Shop! By using our services, you agree to the following terms and conditions. Please read them carefully before using our app.\n\n"
@@ -52,7 +56,7 @@ class TermService extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(bottom: 20, top: 15),
+              padding:const EdgeInsets.only(bottom: 20, top: 15),
               color: Colors.grey.shade200,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -62,6 +66,7 @@ class TermService extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: const Text(
+                    child: const Text(
                       'Agree',
                     ),
                   ),
@@ -69,7 +74,7 @@ class TermService extends StatelessWidget {
                       onTap: () {
                         Navigator.pop(context);
                       },
-                      child: const Text('Diagree'))
+                      child:const Text('Diagree'))
                 ],
               ),
             )

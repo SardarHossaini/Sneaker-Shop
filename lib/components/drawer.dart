@@ -1,75 +1,106 @@
 import 'package:flutter/material.dart';
+import 'package:sneaker_shop/components/customListTile.dart';
+import 'package:sneaker_shop/const.dart';
+import 'package:sneaker_shop/pages/login.dart';
 
-class DrawerComponent extends StatelessWidget {
-  const DrawerComponent({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      backgroundColor: Colors.grey[900],
-      child: Column(
-        children: [
-          // code a DrawerHeader that have a logo and Line in bottom
-          Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
-            child: Column(
-              children: [
-                Image.asset(
-                  'assets/images/logo.png',
-                  height: 100,
-                  color: Colors.white,
-                ),
-                const SizedBox(height: 20),
-                Divider(
-                  color: Colors.grey[800],
-                  thickness: 1,
-                ),
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.only(left: 5),
-            child: ListTile(
-              leading: const Icon(Icons.home, color: Colors.white),
-              title: const Text(
-                'Home',
-                style: TextStyle(color: Colors.white),
+// ignore: non_constant_identifier_names
+Widget DrawerComponent(BuildContext context) {
+  return Drawer(
+    width: 270,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
+    backgroundColor: primaryColor,
+    child: Column(
+      children: [
+        // code a DrawerHeader that have a logo and Line in bottom
+        Padding(
+          padding: const EdgeInsets.only(top: 25, bottom: 5),
+          child: Column(
+            children: [
+              const Icon(
+                Icons.person,
+                color: Colors.white,
+                size: 90,
               ),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 5),
-            child: ListTile(
-              leading: const Icon(Icons.info, color: Colors.white),
-              title: const Text(
-                'About',
-                style: TextStyle(color: Colors.white),
+              const Text(
+                'Sardar Hossaini',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
               ),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 5),
-            child: ListTile(
-              leading: const Icon(Icons.logout_outlined, color: Colors.white),
-              title: const Text(
-                'Logout',
-                style: TextStyle(color: Colors.white),
+              const Text(
+                "sardarhossaini@gmail.com",
+                style: TextStyle(fontSize: 11, color: Colors.white),
               ),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
+              const SizedBox(height: 20),
+              Divider(
+                color: Colors.grey[700],
+                thickness: 0.7,
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
+        ),
+        CustomListTile(
+            context,
+            'Home',
+            const Icon(
+              Icons.home_filled,
+              color: Colors.white,
+              size: 20,
+            ), () {
+          Navigator.pop(context);
+        }),
+        CustomListTile(
+            context,
+            'My Cart',
+            const Icon(
+              Icons.shopping_bag,
+              color: Colors.white,
+              size: 20,
+            ), () {
+          Navigator.pop(context);
+        }),
+        CustomListTile(
+            context,
+            'Favorite',
+            const Icon(
+              Icons.favorite,
+              color: Colors.white,
+              size: 20,
+            ), () {
+          Navigator.pop(context);
+        }),
+        CustomListTile(
+            context,
+            'My Wallet',
+            const Icon(
+              Icons.account_balance_wallet_rounded,
+              color: Colors.white,
+              size: 20,
+            ), () {
+          Navigator.pop(context);
+        }),
+        CustomListTile(
+            context,
+            'Settings',
+            const Icon(
+              Icons.settings_rounded,
+              color: Colors.white,
+              size: 20,
+            ), () {
+          Navigator.pop(context);
+        }),
+        CustomListTile(
+            context,
+            'Logout',
+            const Icon(
+              Icons.logout_outlined,
+              color: Colors.white,
+              size: 20,
+            ), () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) => Login()));
+        }),
+      ],
+    ),
+  );
 }

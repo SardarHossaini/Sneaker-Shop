@@ -52,6 +52,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                 style: TextStyle(fontSize: 18),
               ),
               content: const Text("Check you favorite"),
+              content: const Text("Check you favorite"),
             ));
   }
 
@@ -71,7 +72,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       // shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          padding:const EdgeInsets.symmetric(horizontal: 10),
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
@@ -102,7 +103,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                       // shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          padding:const EdgeInsets.symmetric(horizontal: 10),
                           margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
