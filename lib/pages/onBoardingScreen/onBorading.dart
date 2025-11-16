@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:sneaker_shop/const.dart';
-import 'package:sneaker_shop/introPage.dart';
+import 'package:sneaker_shop/pages/login.dart';
 
 class AdvancedOutBoarding extends StatefulWidget {
   const AdvancedOutBoarding({super.key});
@@ -164,7 +164,7 @@ class _AdvancedOutBoardingState extends State<AdvancedOutBoarding> {
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const IntroPage(),
+        pageBuilder: (_, __, ___) => Login(),
         transitionDuration: const Duration(milliseconds: 500),
         transitionsBuilder: (_, a, __, c) =>
             FadeTransition(opacity: a, child: c),
